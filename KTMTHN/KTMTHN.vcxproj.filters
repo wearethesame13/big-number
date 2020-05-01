@@ -18,9 +18,6 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Function.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BinHex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -29,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Function.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BinHex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
