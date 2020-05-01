@@ -1,5 +1,7 @@
 #include <iostream>
 #include "QInt.h"
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 bool* DecToBin(QInt x)
@@ -33,12 +35,15 @@ QInt BinToDec(bool* bit)
 
 int main()
 {
+	srand(time(NULL));
 	QInt a;
-	bool b[128] = { 0 };
+	bool* b = new bool[128];
 	for (int i = 0; i < 128; i++)
 	{
-		b[i] = rand() % 2 + 0;
+		b[i] = 0;
 	}
+	b[127] = 1;
+	b[9] = 1;
 	setBitQInt(a, b);
 	bool* c = NULL;
 	c = DecToBin(a);
