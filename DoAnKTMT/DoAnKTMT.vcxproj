@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D2D812F9-0E05-404E-8A1F-66B235490AE4}</ProjectGuid>
-    <RootNamespace>KTMTHN</RootNamespace>
+    <ProjectGuid>{5CCF4311-8CBE-44EB-B030-DCEAB694BAC5}</ProjectGuid>
+    <RootNamespace>DoAnKTMT</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,11 +138,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Function.cpp" />
+    <ClCompile Include="QInt.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Function.h" />
+    <ClInclude Include="QInt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
