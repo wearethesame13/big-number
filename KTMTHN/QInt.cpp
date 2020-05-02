@@ -75,25 +75,25 @@ bool operator>(const QInt& a, const QInt& b)
 	}
 	return false;
 }
-bool operator<(const QInt& a, const QInt& b)
-{
-	for (int i = 3; i >= 0; i--)
-	{
-		if (a.data[i] < b.data[i])
-		{
-			return true;
-		}
-		else if (a.data[i] > b.data[i])
-		{
-			return false;
-		}
-		else if (a.data[i] == b.data[i])
-		{
-			continue;
-		}
-	}
-	return false;
-}
+//bool operator<(const QInt& a, const QInt& b)
+//{
+//	for (int i = 3; i >= 0; i--)
+//	{
+//		if (a.data[i] < b.data[i])
+//		{
+//			return true;
+//		}
+//		else if (a.data[i] > b.data[i])
+//		{
+//			return false;
+//		}
+//		else if (a.data[i] == b.data[i])
+//		{
+//			continue;
+//		}
+//	}
+//	return false;
+//}
 bool operator>=(const QInt& a, const QInt& b)
 {
 	for (int i = 3; i >= 0; i--)

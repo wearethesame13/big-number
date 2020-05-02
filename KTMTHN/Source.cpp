@@ -1,14 +1,19 @@
-#include "Function.h"
-#include "BinHex.h"
+#include"BinHex.h"
+#include"QfloatDecToBin.h"
+#include<iostream>
+
 int main()
 {
-	QInt a;
+	Qfloat a;
 	a.data[0] = 0;
-	a.data[1] = 0;
+	a.data[1] = 255;
 	a.data[2] = 0;
-	a.data[3] = 0;
-	char* b = DecToHex(a);
-	std::cout << b;
+	a.data[3] = -1;
+	bool* b = DecToBin(a);
+	for (int i = 0; i < 128; i++)
+	{
+		std::cout << b[i];
+	}
 	delete[]b;
 	return 0;
 }
