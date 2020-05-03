@@ -66,7 +66,7 @@ void DeTwoCompliment(bool* bit)
 
 }
 
-bool* StringIntToBit(string x){
+vector<int> StringIntToBit(string x){
 
 	bool negative = false;
 	if (x[0] == '-')
@@ -75,7 +75,6 @@ bool* StringIntToBit(string x){
 		x.erase(x.begin());
 	}
 
-	bool* bit = new bool[128];
 	vector<int> temp;
 	do {
 		if (((int)x[x.size() - 1] - 48) % 2 == 0)
@@ -91,14 +90,21 @@ bool* StringIntToBit(string x){
 	{
 		TwoCompliment(temp);
 	}
+	
+	return temp;
+}
 
-	int tempSize = temp.size();
+bool* InsertPreBit(string Num, vector<int> tempBit)
+{
+	bool negative = false;
+	bool* bit = new bool[128];
+	int tempSize = tempBit.size();
 
 	for (int i = 0; i < 128; i++)
 	{
 
 		if (i >= 128 - tempSize)
-			if (temp[i - (128 - tempSize)] == 1)
+			if (tempBit[i - (128 - tempSize)] == 1)
 			{
 				bit[i] = 1;
 				continue;
@@ -112,6 +118,7 @@ bool* StringIntToBit(string x){
 	}
 	return bit;
 }
+
 
 string multiply2(string bigNum)
 {
@@ -195,3 +202,5 @@ string StrBitToInt(bool* bit)
 	return result;
 
 }
+
+
