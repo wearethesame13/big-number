@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class QInt
 {
 public:
@@ -6,3 +7,9 @@ public:
 	QInt();
 	~QInt();
 };
+
+bool* DecToBin(QInt x);
+void setBitQInt(QInt &x, bool* bit);
+QInt BinToDec(bool* bit);
+void ScanQInt(QInt& x);
+void PrintQInt(QInt x);
