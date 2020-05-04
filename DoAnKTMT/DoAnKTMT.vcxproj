@@ -138,10 +138,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BigNumber.cpp" />
+    <ClCompile Include="QFloat.cpp" />
     <ClCompile Include="QInt.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BigNumber.h" />
+    <ClInclude Include="QFloat.h" />
     <ClInclude Include="QInt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -47,7 +47,7 @@ void ScanQInt(QInt& x)
 	cout << "Nhap so lon: ";
 	cin >> bigInt;
 	bool* bit = NULL;
-	bit = StringIntToBit(bigInt);
+	bit = InsertPreBit(bigInt, StringIntToBit(bigInt));
 	setBitQInt(x, bit);
 	delete[] bit;
 }
