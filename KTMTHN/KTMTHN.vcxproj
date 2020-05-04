@@ -139,11 +139,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinHex.cpp" />
+    <ClCompile Include="Qfloat.cpp" />
+    <ClCompile Include="QfloatDecToBin.cpp" />
     <ClCompile Include="QInt.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinHex.h" />
+    <ClInclude Include="Qfloat.h" />
+    <ClInclude Include="QfloatDecToBin.h" />
     <ClInclude Include="QInt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

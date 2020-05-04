@@ -1,4 +1,2 @@
-﻿  BinHex.cpp
-D:\OneDrive\OneDrive - VNU-HCMUS\Code\KHMT\KTMTHN\BinHex.cpp(23,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-D:\OneDrive\OneDrive - VNU-HCMUS\Code\KHMT\KTMTHN\BinHex.cpp(121,20): warning C4018: '<': signed/unsigned mismatch
+﻿  Source.cpp
   KTMTHN.vcxproj -> D:\OneDrive\OneDrive - VNU-HCMUS\Code\KHMT\Debug\KTMTHN.exe
