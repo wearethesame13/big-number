@@ -1,5 +1,4 @@
 #include "QInt.h"
-#include "BigNumber.h"
 QInt::QInt()
 {
 	for (int i = 0; i < 4; i++)
