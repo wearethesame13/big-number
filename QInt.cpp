@@ -1,6 +1,6 @@
 ﻿#include "QInt.h"
 // Ham chuyen tu nhi phan sang thap phan
-void DecToBin(int &x, int a[32])
+void comDecToBin(int &x, int a[32])
 {
 	for(int i = 0; i < 32; i++)
 	{
@@ -16,7 +16,7 @@ void DecToBin(int &x, int a[32])
 	
 }
 // Ham chuyen doi nhi phan sang thap phan
-void BinToDec(int &x, int a[32])
+void comBinToDec(int &x, int a[32])
 {
 	x = 0;
 	for(int index = 0; index < 32; index++)
@@ -32,15 +32,15 @@ QInt operator&(QInt a, QInt b)
 	{
 		int aCom[32], bCom[32];
 		int xCom[32];
-		DecToBin(a.data[i], aCom);
-		DecToBin(b.data[i], bCom);
+		comDecToBin(a.data[i], aCom);
+		comDecToBin(b.data[i], bCom);
 
 		for (int index = 0; index < 32; index++)
 		{
 			if (a.data[index] == 1 && b.data[index] == 1) xCom[index] = 1;
 			else xCom[index] = 0;
 		}
-		BinToDec(x.data[i], xCom);
+		comBinToDec(x.data[i], xCom);
 	}
 	return x;
 }
@@ -52,15 +52,15 @@ QInt operator|(QInt a, QInt b)
 	{
 		int aCom[32], bCom[32];
 		int xCom[32];
-		DecToBin(a.data[i], aCom);
-		DecToBin(b.data[i], bCom);
+		comDecToBin(a.data[i], aCom);
+		comDecToBin(b.data[i], bCom);
 
 		for (int index = 0; index < 32; index++)
 		{
 			if (a.data[index] == 0 && b.data[index] == 0) xCom[index] = 0;
 			else xCom[index] = 1;
 		}
-		BinToDec(x.data[i], xCom);
+		comBinToDec(x.data[i], xCom);
 	}
 	return x;
 }
@@ -72,15 +72,15 @@ QInt operator^(QInt a, QInt b)
 	{
 		int aCom[32], bCom[32];
 		int xCom[32];
-		DecToBin(a.data[i], aCom);
-		DecToBin(b.data[i], bCom);
+		comDecToBin(a.data[i], aCom);
+		comDecToBin(b.data[i], bCom);
 
 		for (int index = 0; index < 32; index++)
 		{
 			if (a.data[index] == b.data[index]) xCom[index] = 0;
 			else xCom[index] = 1;
 		}
-		BinToDec(x.data[i], xCom);
+		comBinToDec(x.data[i], xCom);
 	}
 	return x;
 }
@@ -92,13 +92,13 @@ QInt operator~(QInt a)
 	{
 		int aCom[32];
 		int xCom[32];
-		DecToBin(a.data[i], aCom);
+		comDecToBin(a.data[i], aCom);
 		for (int index = 0; index < 32; index++)
 		{
 			if (a.data[index] == 1) xCom[index] = 0;
 			else xCom[index] = 1;
 		}
-		BinToDec(x.data[i], xCom);
+		comBinToDec(x.data[i], xCom);
 	}
 	return x;
 }
@@ -113,7 +113,7 @@ QInt operator>>(QInt a, int n)
 
 	for (int i = 0; i < 4; i++)
 	{
-		DecToBin(a.data[i], aCom);
+		comDecToBin(a.data[i], aCom);
 		aOver[index++] = aCom[index % 32];
 		
 	}
@@ -133,7 +133,7 @@ QInt operator>>(QInt a, int n)
 		{
 			aCom[j] = aOver[reIndex * i + j];
 		}
-		BinToDec(a.data[i], aCom);
+		comBinToDec(a.data[i], aCom);
 		reIndex++;
 	}
 	return a;
@@ -149,7 +149,7 @@ QInt operator<<(QInt a, int n)
 
 	for (int i = 0; i < 4; i++)
 	{
-		DecToBin(a.data[i], aCom);
+		comDecToBin(a.data[i], aCom);
 		aOver[index++] = aCom[index % 32];
 
 	}
@@ -169,7 +169,7 @@ QInt operator<<(QInt a, int n)
 		{
 			aCom[j] = aOver[reIndex * i + j];
 		}
-		BinToDec(a.data[i], aCom);
+		comBinToDec(a.data[i], aCom);
 		reIndex++;
 	}
 	return a;
@@ -184,7 +184,7 @@ QInt QInt::rol()
 
 	for (int i = 0; i < 4; i++)
 	{
-		DecToBin(this->data[i], aCom);
+		comDecToBin(this->data[i], aCom);
 		aOver[index++] = aCom[index % 32];
 
 	}
@@ -202,7 +202,7 @@ QInt QInt::rol()
 		{
 			aCom[j] = aOver[reIndex * i + j];
 		}
-		BinToDec(this->data[i], aCom);
+		comBinToDec(this->data[i], aCom);
 		reIndex++;
 	}
 	return *this;
@@ -217,7 +217,7 @@ QInt QInt::ror()
 
 	for (int i = 0; i < 4; i++)
 	{
-		DecToBin(this->data[i], aCom);
+		comDecToBin(this->data[i], aCom);
 		aOver[index++] = aCom[index % 32];
 
 	}
@@ -235,7 +235,7 @@ QInt QInt::ror()
 		{
 			aCom[j] = aOver[reIndex * i + j];
 		}
-		BinToDec(this->data[i], aCom);
+		comBinToDec(this->data[i], aCom);
 		reIndex++;
 	}
 	return *this;

@@ -9,4 +9,4 @@ public:
     float BinToDec(QFloat a);
     friend void ComponentDecToBin(int &x, int a[32]);
 
-}
+};
