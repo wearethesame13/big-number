@@ -294,6 +294,7 @@ QInt operator~(QInt a)
 // Định nghĩa toán tử dịch phải ">>"
 QInt operator>>(QInt &a, int n)
 {
+	QInt reA;
 	int aOver[128];
 	int aCom[32];
 	int index = 0;
@@ -320,16 +321,16 @@ QInt operator>>(QInt &a, int n)
 		{
 			aCom[j] = aOver[reIndex * i + j];
 		}
-		comBinToDec(a.data[i], aCom);
+		comBinToDec(reA.data[i], aCom);
 		reIndex++;
 	}
-	return a;
+	return reA;
 }
 
 // Định nghĩa toán tử dịch trái "<<"
-QInt operator<<(QInt &a, int n)
+QInt operator<<(QInt a, int n)
 {
-
+	QInt reA;
 	int aOver[128];
 	int aCom[32];
 	int index = 0;
@@ -356,10 +357,10 @@ QInt operator<<(QInt &a, int n)
 		{
 			aCom[j] = aOver[reIndex * i + j];
 		}
-		comBinToDec(a.data[i], aCom);
+		comBinToDec(reA.data[i], aCom);
 		reIndex++;
 	}
-	return a;
+	return reA;
 }
 
 // Hàm xoay phải
