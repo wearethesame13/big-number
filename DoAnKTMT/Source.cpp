@@ -21,7 +21,7 @@ int main()
 			<< "2.  Xuat so nguyen he 10\n"
 			<< "3.  Doi so he 10 sang he 2\n"
 			<< "4.  Doi so he 2 sang he 10\n"
-			<< "5.  Doi so he 10 sang he 16\n"
+			<< "5.  Doi so he 2 sang he 16\n"
 			<< "6.  Doi so he 10 sang he 16\n"
 			<< "7.  Cac operator toan tu\n"
 			<< "8.  Cac toan tu so sanh va gan\n"
