@@ -13,6 +13,7 @@ int main()
 	cout << "====================================" << endl;
 	int stt;
 	QInt bai1va2;
+	string tmp;
 	while (true)
 	{
 		cout << "\nMenu chuc nang chinh" << endl;
@@ -48,10 +49,12 @@ int main()
 			//Them chuc nang
 			break;
 		case(5):
-			//Them chuc nang
+			cout << "Nhap day bit < 128: ";
+			cin >> tmp;
+			cout << BinToHex(xuLyChuoiBit(tmp)) << endl;
 			break;
 		case(6):
-			//Them chuc nang
+			cout << DecToHex(bai1va2) << endl;
 			break;
 		case(7):
 			//Them chuc nang

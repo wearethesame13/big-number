@@ -1,4 +1,5 @@
 #include "QInt.h"
+#include "BigNumber.h"
 QInt::QInt()
 {
 	for (int i = 0; i < 4; i++)
@@ -42,9 +43,9 @@ QInt BinToDec(bool* bit)
 
 void ScanQInt(QInt& x)
 {
-	string bigInt;
-	cout << "Nhap so lon: ";
-	cin >> bigInt;
+	std::string bigInt;
+	std::cout << "Nhap so lon: ";
+	std::cin >> bigInt;
 	bool* bit = NULL;
 	bit = InsertPreBit(bigInt, StringIntToBit(bigInt));
 	setBitQInt(x, bit);
@@ -54,10 +55,10 @@ void ScanQInt(QInt& x)
 void PrintQInt(QInt x)
 {
 	bool* bit = DecToBin(x);
-	string num;
+	std::string num;
 
 	num = StrBitToInt(bit);
-	cout << num << endl;
+	std::cout << num << std::endl;
 }
 
 char* BinToHex(bool* bit)
@@ -427,3 +428,23 @@ QInt QInt::ror()
 	return *this;
 }
 
+bool* xuLyChuoiBit(std::string bo)
+{
+	if(bo.length() > 128)
+	{
+		return nullptr;
+	}
+	bool* result = new bool[128];
+	if(bo.length() <= 128)
+	{
+		while(bo.length() < 128)
+		{
+			bo = '0' + bo;
+		}
+		for(int i = 0; i < 128; i++)
+		{
+			result[i] = bo[i] - ('0' - '\0');
+		}
+	}
+	return result;
+}
