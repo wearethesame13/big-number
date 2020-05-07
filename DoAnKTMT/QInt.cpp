@@ -291,7 +291,7 @@ QInt operator~(QInt a)
 
 
 // Định nghĩa toán tử dịch phải ">>"
-QInt operator>>(QInt a, int n)
+QInt operator>>(QInt &a, int n)
 {
 	int aOver[128];
 	int aCom[32];
@@ -326,7 +326,7 @@ QInt operator>>(QInt a, int n)
 }
 
 // Định nghĩa toán tử dịch trái "<<"
-QInt operator<<(QInt a, int n)
+QInt operator<<(QInt &a, int n)
 {
 
 	int aOver[128];
