@@ -15,8 +15,8 @@ public:
 	friend QInt operator ~ (QInt a);
 
 	//Dịch phải, dịch trái, xoay phải, xoay trái
-	friend QInt operator >> (QInt &a, int n);
-	friend QInt operator << (QInt &a, int n);
+	friend QInt operator >> (QInt a, int n);
+	friend QInt operator << (QInt a, int n);
 	QInt rol();
 	QInt ror();
 	friend void comDecToBin(int &x, int a[32]);
