@@ -9,6 +9,7 @@ public:
 	int data[4];
 	QInt();
 	~QInt();
+	// And , Or, Xor, Not
 	friend QInt operator & (QInt a, QInt b);
 	friend QInt operator | (QInt a, QInt b);
 	friend QInt operator ^ (QInt a, QInt b);
@@ -17,10 +18,9 @@ public:
 	//Dịch phải, dịch trái, xoay phải, xoay trái
 	friend QInt operator >> (QInt a, int n);
 	friend QInt operator << (QInt a, int n);
-	QInt rol();
-	QInt ror();
-	friend void comDecToBin(int &x, int a[32]);
-	friend void comBinToDec(int &x, int a[32]);
+	QInt rol(int n);
+	QInt ror(int n);
+	
 };
 
 bool* DecToBin(QInt x);
@@ -34,6 +34,6 @@ char HexIndex(int index);
 char* DecToHex(QInt x); //Chuyển đổi QInt thập phân sang thập lục phân
 bool getBitInt(int value, int pos); //Lấy bit tại vị trí pos từ trái sang
 char* vectorToStr(std::vector<char> x); //Chuyển đổi vector char về chuỗi
-// And , Or, Xor, Not
+
 
 bool* xuLyChuoiBit(std::string bo);
