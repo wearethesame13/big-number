@@ -1,0 +1,3 @@
+C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\Debug\Calculator_KTMT.vcxprojAssemblyReference.cache
+C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\Debug\CalculatorKTMT.MyForm.resources
+C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\Debug\Calculator_KTMT.vcxproj.GenerateResource.cache

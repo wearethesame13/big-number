@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(508,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+  BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Calculator_KTMT.vcxproj -> C:\Users\lequo\source\repos\Calculator_KTMT\Debug\Calculator_KTMT.exe

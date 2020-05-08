@@ -1,3 +1,0 @@
-﻿  Source.cpp
-C:\Users\lequo\source\repos\DoAnKTMT\DoAnKTMT\Source.cpp(38,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  DoAnKTMT.vcxproj -> C:\Users\lequo\source\repos\DoAnKTMT\Debug\DoAnKTMT.exe
