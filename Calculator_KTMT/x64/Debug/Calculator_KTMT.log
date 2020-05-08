@@ -1,2 +1,17 @@
-﻿  BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Calculator_KTMT.vcxproj -> F:\KTMT&HN\Đồ án 1\KTMTHN\x64\Debug\Calculator_KTMT.exe
+﻿  BigNumber.cpp
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(26,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(102,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(130,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(159,35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(172,35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(234,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\BigNumber.cpp(318,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MyForm.cpp
+D:\source calculator\big-number\Calculator_KTMT\MyForm.h(627,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\MyForm.h(670,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+  QInt.cpp
+D:\source calculator\big-number\Calculator_KTMT\QInt.cpp(79,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\source calculator\big-number\Calculator_KTMT\QInt.cpp(206,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Calculator_KTMT.vcxproj -> D:\source calculator\big-number\x64\Debug\Calculator_KTMT.exe

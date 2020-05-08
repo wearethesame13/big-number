@@ -1,6 +1,4 @@
-﻿  QInt.cpp
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\QInt.cpp(79,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\QInt.cpp(177,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\QInt.cpp(206,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+﻿  MyForm.cpp
+D:\source calculator\big-number\Calculator_KTMT\MyForm.h(670,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
   BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Calculator_KTMT.vcxproj -> C:\Users\lequo\source\repos\Calculator_KTMT\Debug\Calculator_KTMT.exe
+  Calculator_KTMT.vcxproj -> D:\source calculator\big-number\Debug\Calculator_KTMT.exe
