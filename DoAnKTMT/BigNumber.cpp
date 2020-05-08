@@ -20,13 +20,24 @@ void TwoCompliment(string &StrBit) {
 	for (int i = 0; i < StrBit.size(); i++)
 		if (StrBit[i] == '0') StrBit[i] = '1';
 		else StrBit[i] = '0';
-
 	//Cong bit 1
 	int rem = 1;
-	int i = StrBit.size() - 1;
+	
+
+	for (int i = StrBit.size() - 1; i >= 0; i--)
+	{
+		if (StrBit[i] == '0')
+		{
+			StrBit[i] = '1';
+			break;
+		}
+		else
+			StrBit[i] = '0';
+	}
+	/*int i = StrBit.size();
 	while ((rem != 0) && (i > 0))
 	{
-		if (StrBit[i] == 0)
+		if (StrBit[i] == '0')
 		{
 			StrBit[i] = '1';
 			rem = 0;
@@ -34,7 +45,7 @@ void TwoCompliment(string &StrBit) {
 		else
 			StrBit[i] = '0';
 		i--;
-	}
+	}*/
 }
 
 void DeTwoCompliment(bool* bit)
@@ -66,7 +77,7 @@ void DeTwoCompliment(bool* bit)
 
 }
 
-string StringIntToBit(string x){
+string StringIntToBit(string x) {
 
 	bool negative = false;
 	if (x[0] == '-')
@@ -85,19 +96,22 @@ string StringIntToBit(string x){
 	} while (x != "0");
 
 	reverse(temp.begin(), temp.end());
-
+	while (temp[0] == '0') temp.erase(temp.begin());
+	if (temp == "") temp = "0";
 	if (negative == true)
 	{
 		TwoCompliment(temp);
 	}
-	while (temp[0] == '0') temp.erase(temp.begin());
-	if (temp == "") temp = "0";
 	return temp;
 }
 
 bool* InsertPreBit(string Num, string tempBit)
 {
 	bool negative = false;
+	if (Num[0] == '-')
+	{
+		negative = true;
+	}
 	bool* bit = new bool[128];
 	int tempSize = tempBit.size();
 
@@ -203,7 +217,7 @@ string StrBitToInt(bool* bit)
 		negative = true;
 		DeTwoCompliment(bit);
 	}
-	string result;
+	string result = "";
 	string temp = "1";
 	int lo = 0, hi = 0;
 	for (int i = 128 - 1; i >= 0; i--)
@@ -214,7 +228,6 @@ string StrBitToInt(bool* bit)
 			result = add(result, temp);
 			lo = hi;
 		}
-
 		hi++;
 	}
 

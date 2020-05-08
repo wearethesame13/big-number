@@ -43,6 +43,10 @@ QInt BinToDec(bool* bit)
 
 void ScanQInt(QInt& x)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
 	std::string bigInt;
 	std::cout << "Nhap so lon: ";
 	std::cin >> bigInt;
