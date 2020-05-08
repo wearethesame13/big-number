@@ -209,220 +209,167 @@ void comBinToDec(int& x, int a[32])
 // Định nghĩa toán tử AND "&"
 QInt operator&(QInt a, QInt b)
 {
-	QInt x;
-	for (int i = 0; i < 4; i++)
-	{
-		int aCom[32], bCom[32];
-		int xCom[32];
-		comDecToBin(a.data[i], aCom);
-		comDecToBin(b.data[i], bCom);
 
-		for (int index = 0; index < 32; index++)
-		{
-			if (a.data[index] == 1 && b.data[index] == 1) xCom[index] = 1;
-			else xCom[index] = 0;
-		}
-		comBinToDec(x.data[i], xCom);
+	bool* x = DecToBin(a);
+	bool* y = DecToBin(b);
+	bool* over = new bool[128];
+	for (int index = 0; index < 128; index++)
+	{
+		if (x[index] == 1 && y[index] == 1) over[index] = 1;
+		else over[index] = 0;
+
 	}
-	return x;
+	return BinToDec(over);
 }
 // Định nghĩa toán tử OR "|"
 QInt operator|(QInt a, QInt b)
 {
-	QInt x;
-	for (int i = 0; i < 4; i++)
-	{
-		int aCom[32], bCom[32];
-		int xCom[32];
-		comDecToBin(a.data[i], aCom);
-		comDecToBin(b.data[i], bCom);
 
-		for (int index = 0; index < 32; index++)
-		{
-			if (a.data[index] == 0 && b.data[index] == 0) xCom[index] = 0;
-			else xCom[index] = 1;
-		}
-		comBinToDec(x.data[i], xCom);
+	bool* x = DecToBin(a);
+	bool* y = DecToBin(b);
+	bool* over = new bool[128];
+	for (int index = 0; index < 128; index++)
+	{
+		if (x[index] == 0 && y[index] == 0) over[index] = 0;
+		else over[index] = 1;
 	}
-	return x;
+	return BinToDec(over);
 }
 // Định nghĩa toán tử XOR "^"
 QInt operator^(QInt a, QInt b)
 {
-	QInt x;
-	for (int i = 0; i < 4; i++)
-	{
-		int aCom[32], bCom[32];
-		int xCom[32];
-		comDecToBin(a.data[i], aCom);
-		comDecToBin(b.data[i], bCom);
 
-		for (int index = 0; index < 32; index++)
-		{
-			if (a.data[index] == b.data[index]) xCom[index] = 0;
-			else xCom[index] = 1;
-		}
-		comBinToDec(x.data[i], xCom);
+	bool* x = DecToBin(a);
+	bool* y = DecToBin(b);
+	bool* over = new bool[128];
+	for (int index = 0; index < 128; index++)
+	{
+		if (x[index] == y[index]) over[index] = 0;
+		else over[index] = 1;
+
 	}
-	return x;
+	return BinToDec(over);
 }
 // Định nghĩa toán tử NOT "~"
 QInt operator~(QInt a)
 {
-	QInt x;
-	for (int i = 0; i < 4; i++)
+
+	bool* x = DecToBin(a);
+	bool* over = new bool[128];
+	for (int index = 0; index < 128; index++)
 	{
-		int aCom[32];
-		int xCom[32];
-		comDecToBin(a.data[i], aCom);
-		for (int index = 0; index < 32; index++)
-		{
-			if (a.data[index] == 1) xCom[index] = 0;
-			else xCom[index] = 1;
-		}
-		comBinToDec(x.data[i], xCom);
+		if (x[index] == 1) over[index] = 0;
+		else over[index] = 0;
+
 	}
-	return x;
+	return BinToDec(over);
 }
 
 
 // Định nghĩa toán tử dịch phải ">>"
-QInt operator>>(QInt& a, int n)
+QInt operator>>(QInt a, int n)
 {
-	int aOver[128];
-	int aCom[32];
-	int index = 0;
+	bool* x = DecToBin(a);
 
-	for (int i = 0; i < 4; i++)
+	if (x[0] == 0)
 	{
-		comDecToBin(a.data[i], aCom);
-		aOver[index++] = aCom[index % 32];
-
-	}
-	for (int i = n; i < 128; i++)
-	{
-		aOver[i] = aOver[i - n];
-	}
-	for (int i = 0; i < n; i++)
-	{
-		aOver[i] = 0;
-	}
-	int reIndex = 0;
-
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 32; j++)
+		for (int index = n; index < 128; index++)
 		{
-			aCom[j] = aOver[reIndex * i + j];
+			x[index] = x[index - n];
 		}
-		comBinToDec(a.data[i], aCom);
-		reIndex++;
+		for (int index = 0; index < n; index++)
+		{
+			x[index] = 0;
+		}
 	}
-	return a;
+	if (x[0] == 1)
+	{
+		for (int index = n + 1; index < 128; index++)
+		{
+			x[index] = x[index - n];
+		}
+		for (int index = 1; index < n + 1; index++)
+		{
+			x[index] = 0;
+		}
+	}
+	return BinToDec(x);
 }
 
 // Định nghĩa toán tử dịch trái "<<"
-QInt operator<<(QInt& a, int n)
+QInt operator<<(QInt a, int n)
 {
-
-	int aOver[128];
-	int aCom[32];
-	int index = 0;
-
-	for (int i = 0; i < 4; i++)
+	bool* x = DecToBin(a);
+	if (x[0] == 0)
 	{
-		comDecToBin(a.data[i], aCom);
-		aOver[index++] = aCom[index % 32];
-
-	}
-	for (int i = 0; i < 128 - n; i++)
-	{
-		aOver[i] = aOver[i + n];
-	}
-	for (int i = 128 - n; i < 128; i++)
-	{
-		aOver[i] = 0;
-	}
-	int reIndex = 0;
-
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 32; j++)
+		for (int index = 0; index < 128 - n; index++)
 		{
-			aCom[j] = aOver[reIndex * i + j];
+			x[index] = x[index + n];
 		}
-		comBinToDec(a.data[i], aCom);
-		reIndex++;
+		for (int index = 128 - n; index < 128; index++)
+		{
+			x[index] = 0;
+		}
 	}
-	return a;
+	if (x[0] == 1)
+	{
+		for (int index = 1; index < 128 - n; index++)
+		{
+			x[index] = x[index + n];
+		}
+		for (int index = 128 - n; index < 128; index++)
+		{
+			x[index] = 0;
+		}
+
+	}
+	return BinToDec(x);
 }
 
 // Hàm xoay phải
-QInt QInt::rol()
+QInt QInt::rol(int n)
 {
-	int aOver[128];
-	int aCom[32];
-	int index = 0;
-
-	for (int i = 0; i < 4; i++)
+	bool* x = DecToBin(*this);
+	bool* a = new bool[n];
+	for (int index = 0; index < n; index++)
 	{
-		comDecToBin(this->data[i], aCom);
-		aOver[index++] = aCom[index % 32];
-
+		a[index] = x[index];
 	}
-	int a0 = aOver[0];
-	for (int i = 0; i < 127; i++)
+	for (int index = 0; index < 128 - n; index++)
 	{
-		aOver[i] = aOver[i + 1];
+		x[index] = x[index + n];
 	}
-	aOver[127] = a0;
-	int reIndex = 0;
-
-	for (int i = 0; i < 4; i++)
+	int indexOfn = n - 1;
+	for (int index = 128 - n; index < 128; index++)
 	{
-		for (int j = 0; j < 32; j++)
-		{
-			aCom[j] = aOver[reIndex * i + j];
-		}
-		comBinToDec(this->data[i], aCom);
-		reIndex++;
+		x[index] = a[indexOfn];
+		indexOfn--;
 	}
-	return *this;
+	return BinToDec(x);
 }
+
 
 // Hàm xoay trái
-QInt QInt::ror()
+QInt QInt::ror(int n)
 {
-	int aOver[128];
-	int aCom[32];
-	int index = 0;
-
-	for (int i = 0; i < 4; i++)
+	bool* x = DecToBin(*this);
+	bool* a = new bool[n];
+	for (int index = 128 - n; index < 128; index++)
 	{
-		comDecToBin(this->data[i], aCom);
-		aOver[index++] = aCom[index % 32];
-
+		a[index] = x[index];
 	}
-	int a127 = aOver[127];
-	for (int i = 1; i < 128; i++)
+	for (int index = n; index < 128; index++)
 	{
-		aOver[i] = aOver[i - 1];
+		x[index] = x[index - n];
 	}
-	aOver[0] = a127;
-	int reIndex = 0;
-
-	for (int i = 0; i < 4; i++)
+	int indexOfn = n - 1;
+	for (int index = 0; index < n; index++)
 	{
-		for (int j = 0; j < 32; j++)
-		{
-			aCom[j] = aOver[reIndex * i + j];
-		}
-		comBinToDec(this->data[i], aCom);
-		reIndex++;
+		x[index] = a[indexOfn];
+		indexOfn--;
 	}
-	return *this;
+	return BinToDec(x);
 }
-
 bool* xuLyChuoiBit(std::string bo)
 {
 	if (bo.length() > 128)
@@ -443,4 +390,160 @@ bool* xuLyChuoiBit(std::string bo)
 	}
 	return result;
 }
+QInt operator+(const QInt a, const QInt b)
+{
+	int nho = 0;
+	bool* bin1 = DecToBin(a);
+	bool* bin2 = DecToBin(b);
+	if (bin1[0] == 1 && bin2[0] == 1)
+	{
+		cout << "Xay ra hien tuong tran so!!!" << endl;
+	}
+	bool* binResult = new bool[128];
+	QInt result;
+	for (int i = 127; i >= 0; i--)
+	{
+		int t = (int)bin1[i] + (int)bin2[i] + nho;
+		if (t == 3)
+		{
+			binResult[i] = 1;
+			nho = 1;
+		}
+		if (t == 2)
+		{
+			binResult[i] = 0;
+			nho = 1;
+		}
+		if (t == 1)
+		{
+			binResult[i] = 1;
+			nho = 0;
+		}
+		if (t == 0)
+		{
+			binResult[i] = 0;
+			nho = 0;
+		}
+	}
 
+	setBitQInt(result, binResult);
+	return result;
+}
+QInt operator-(const QInt a, const QInt b)
+{
+	return a + TwoCompliment(b); // cộng với bù 2 của b
+}
+QInt& QInt::operator=(const QInt b)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		data[i] = b.data[i];
+	}
+	return *this;
+}
+QInt TwoCompliment(const QInt a)
+{
+	QInt result;
+	for (int i = 0; i < 4; i++)
+	{
+		result.data[i] = ~a.data[i];
+	}
+	QInt bit1;
+	bit1.data[3] = 1;
+	return result + bit1;
+}
+bool operator<(const QInt a, const QInt b)
+{
+	for (int i = 3; i >= 0; i--)
+	{
+		if (a.data[i] < b.data[i])
+		{
+			return true;
+		}
+		else if (a.data[i] > b.data[i])
+		{
+			return false;
+		}
+		else if (a.data[i] == b.data[i])
+		{
+			continue;
+		}
+	}
+	return false;
+}
+bool operator==(const QInt a, const QInt b)
+{
+	for (int i = 3; i >= 0; i--)
+	{
+		if (a.data[i] < b.data[i])
+		{
+			return false;
+		}
+		else if (a.data[i] > b.data[i])
+		{
+			return false;
+		}
+		else if (a.data[i] == b.data[i])
+		{
+			continue;
+		}
+	}
+	return true;
+}
+bool operator>(const QInt a, const QInt b)
+{
+	for (int i = 3; i >= 0; i--)
+	{
+		if (a.data[i] < b.data[i])
+		{
+			return false;
+		}
+		else if (a.data[i] > b.data[i])
+		{
+			return true;
+		}
+		else if (a.data[i] == b.data[i])
+		{
+			continue;
+		}
+	}
+	return false;
+}
+bool operator<=(const QInt a, const QInt b)
+{
+	for (int i = 3; i >= 0; i--)
+	{
+		if (a.data[i] < b.data[i])
+		{
+			return true;
+		}
+		else if (a.data[i] > b.data[i])
+		{
+			return false;
+		}
+		else if (a.data[i] == b.data[i])
+		{
+			continue;
+		}
+	}
+	return true;
+}
+bool operator>=(const QInt a, const QInt b)
+{
+	for (int i = 3; i >= 0; i--)
+	{
+		if (a.data[i] < b.data[i])
+		{
+			return false;
+		}
+		else if (a.data[i] > b.data[i])
+		{
+			return true;
+		}
+		else if (a.data[i] == b.data[i])
+		{
+			continue;
+		}
+	}
+	return true;
+}

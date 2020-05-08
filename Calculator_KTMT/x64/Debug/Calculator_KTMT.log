@@ -1,21 +1,2 @@
-﻿  BigNumber.cpp
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(26,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(102,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(130,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(159,35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(172,35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(234,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\BigNumber.cpp(318,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  MyForm.cpp
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(548,1): error C3374: can't take address of 'System::Int32::ToString' unless creating delegate instance
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(548,1): error C2679: binary '+': no operator found which takes a right-hand operand of type 'overloaded-function' (or there is no acceptable conversion)
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(548,1): message : could be 'built-in C++ operator+(volatile const System::String ^, volatile const System::String ^)'
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(548,1): message : or       'built-in C++ operator+(volatile const System::String ^, volatile const System::Object ^)'
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(548,1): message : or       'built-in C++ operator+(volatile const System::Object ^, volatile const System::String ^)'
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(548,1): message : while trying to match the argument list '(System::String ^, overloaded-function)'
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\MyForm.h(562,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
-  QInt.cpp
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\QInt.cpp(79,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\lequo\source\repos\Calculator_KTMT\Calculator_KTMT\QInt.cpp(206,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
-  Generating Code...
+﻿  BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Calculator_KTMT.vcxproj -> F:\KTMT&HN\Đồ án 1\KTMTHN\x64\Debug\Calculator_KTMT.exe
