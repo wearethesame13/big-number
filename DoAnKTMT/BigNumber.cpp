@@ -233,7 +233,8 @@ string StrBitToInt(bool* bit)
 
 	if (negative)
 		result = '-' + result;
-
+	if (result == "")
+		result = "0";
 	return result;
 
 }
@@ -376,3 +377,28 @@ bool* StringFloatToBit(string BigFloat)
 }
 
 
+bool* MakeBit(string StrBit)
+{
+	bool bit[128] = {false};
+	int tempSize = StrBit.size();
+
+	for (int i = 0; i < 128; i++)
+	{
+
+		if (i >= 128 - tempSize)
+			if (StrBit[i - (128 - tempSize)] == '1')
+			{
+				bit[i] = 1;
+				continue;
+			}
+			else if(StrBit[i - (128 - tempSize)] == '0')
+				bit[i] = 0;
+	}
+	cout << "Day bit: ";
+	for (int i = 0; i < 128; i++)
+	{
+		cout << bit[i];
+	}
+	puts("");
+	return bit;
+}
