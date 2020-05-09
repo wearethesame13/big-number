@@ -20,7 +20,17 @@ public:
 	friend QInt operator << (QInt a, int n);
 	QInt rol(int n);
 	QInt ror(int n);
-	
+	//Cac phep toan + - * / %
+	QInt& operator=(const QInt b);
+	friend bool operator<(const QInt a, const QInt b);
+	friend bool operator==(const QInt a, const QInt b);
+	friend bool operator>(const QInt a, const QInt b);
+	friend bool operator<=(const QInt a, const QInt b);
+	friend bool operator>=(const QInt a, const QInt b);
+	friend QInt operator+(const QInt a, const QInt b);
+	friend QInt operator-(const QInt a, const QInt b);
+	friend QInt operator*(QInt M, QInt Q);
+	friend QInt operator/(QInt Q, QInt M);
 };
 
 bool* DecToBin(QInt x);
@@ -38,3 +48,4 @@ char* vectorToStr(std::vector<char> x); //Chuyển đổi vector char về chu�
 
 
 bool* xuLyChuoiBit(std::string bo);
+void TwoCompliment(bool* bit);

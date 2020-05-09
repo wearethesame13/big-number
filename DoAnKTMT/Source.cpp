@@ -14,6 +14,8 @@ int main()
 	int stt;
 	QInt bai1va2;
 	string tmp;
+	QInt a, b;
+	QInt result;
 	while (true)
 	{
 		cout << "\nMenu chuc nang chinh" << endl;
@@ -58,9 +60,35 @@ int main()
 			break;
 		case(7):
 			//Them chuc nang
+			ScanQInt(a);
+			ScanQInt(b);
+			result = a / b;
+			PrintQInt(result);
 			break;
 		case(8):
 			//Them chuc nang
+			ScanQInt(a);
+			ScanQInt(b);
+			if (a<b)
+			{
+				cout << "a<b";
+			}
+			if (a>b)
+			{
+				cout << "a>b";
+			}
+			if (a<=b)
+			{
+				cout << "a<=b";
+			}
+			if (a>=b)
+			{
+				cout << "a>=b";
+			}
+			if (a==b)
+			{
+				cout << "a=b";
+			}
 			break;
 		case(9):
 			//Them chuc nang
