@@ -15,7 +15,7 @@ string convert(string line)
 	else if (base1 == "2")
 		ScanBin(x, num);
 	else if (base1 == "16")
-		result = "khong biet";
+		ScanHex(x, num);
 	}
 
 
@@ -36,7 +36,10 @@ string convert(string line)
 		else if (base1 == "10")
 			result = convertBintoDec(x);
 		else if (base1 == "16")
-			result = "khong biet";
+		{
+			char* hex = DecToHex(x);
+			result = hex;
+		}
 
 	}
 	return result;
@@ -60,6 +63,11 @@ string operate(string line)
 	{
 		ScanInt(x, num1);
 		ScanInt(y, num2);
+	}
+	else if (base == "16")
+	{
+		ScanHex(x, num1);
+		ScanHex(y, num2);
 	}
 
 	if (op == "+")
@@ -146,7 +154,10 @@ string operate(string line)
 	else if (base == "10")
 		result = convertBintoDec(z);
 	else if (base == "16")
-		result = "khong biet";
+	{
+		char* hex = DecToHex(z);
+		result = hex;
+	}
 
 	
 	return result;
