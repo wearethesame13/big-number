@@ -144,24 +144,11 @@ void PrintQfloat(Qfloat x)
 				//if (sign) cout << '-'; //Kiểm tra số âm.
 				//cout << value << "x2^" << Vexp << endl; //Xuất ra dạng x.xxxx*2^x
 				if (sign == 1) cout << '-';
-				/*if (Vexp > 0)
-				{
-					for (i = 0; i < Vexp; i++)
-						value = value * 2;
-				}
-				else
-				{
-					if (Vexp < 0)
-					{
-						for (i = 0; i < -Vexp; i++)
-							value = value / 2;
-					}
-				}*/
 				// làm tròn
 				bool iszero = true;
 				for (int i = 0; i < value.m_float.length(); i++)
 				{
-					if (value.m_float[i] == '.')
+					if (value.m_float[i] == '.' && value.m_float[i] == '0')
 					{
 						for (int j = i + 1; j < value.m_float.length(); j++)
 						{
