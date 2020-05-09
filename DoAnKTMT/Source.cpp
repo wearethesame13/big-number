@@ -119,7 +119,7 @@ int main()
 			cin>>n;
 			cout<<"a ror "<<n<<" =";
 			PrintQInt(a.ror(n));
-			cout<<xoay trai bao nhieu bit: ";
+			cout<<"xoay trai bao nhieu bit: ";
 			cin>>n;
 			cout<<"a rol "<<n<<" =";
 			PrintQInt(a.rol(n));
