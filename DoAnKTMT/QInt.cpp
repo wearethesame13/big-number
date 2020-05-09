@@ -312,7 +312,7 @@ QInt operator~(QInt a)
 	for (int index = 0; index < 128; index++)
 	{
 		if (x[index] == 1 ) over[index] = 0;
-		else over[index] = 0;
+		else over[index] = 1;
 
 	}
 	return BinToDec(over);
