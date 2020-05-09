@@ -300,7 +300,7 @@ string StringDecPartToBit(string decimal)
 {
 	//NOTE: ham doi phan nhi phan sang bit
 	string result; int i = 0;
-	while (decimal != "0.0" && i < 15)
+	while (decimal != "0.0" && i < 113)
 	{
 		decimal = mul2Float(decimal);
 		if (decimal == "1.0")
@@ -368,7 +368,7 @@ bool* StringFloatToBit(string BigFloat)
 			else bit[1 + i] = 1;
 		}
 
-		for (int i = 0; i < 112; i++)
+		for (int i = 0; i < 113; i++)
 		{
 			if (FractionBit[i] == '0')
 				bit[16 + i] = 0;
