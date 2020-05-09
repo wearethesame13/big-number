@@ -111,22 +111,40 @@ void PrintQfloat(Qfloat x)
 						Vexp = Vexp + base2;
 					base2 *= 2;
 				}
+				cout << Vexp << endl;
 				//Chuyển lại theo số Bias bằng cách trừ đi lượng MAX_VALUE_EXP nếu là số dạng không chuẩn thì trừ đi MAX_VALUE_EXP – 1.
 				if (Vexp != 0) Vexp = Vexp - 16383;
 				else Vexp = Vexp - 16382;
+				cout << "vexp:" << Vexp << endl;
 				//Chuyển đối giá trị sau dấu phẩy về dạng thập phân với 35 số sau dấu phẩy.
+				int index = -1;
+				index = index + Vexp;
+				if (index < 0) {
+					for (int i = 0; i > index; i--)
+					{
+						base2after /= 2;
+					}
+				}
+
+				if (index > 0) {
+					for (int i = 0; i < index; i++)
+					{
+						base2after = base2after * 2;
+					}
+				}
+				value = value + base2after * 2;
 				for (i = 16; i < 128; i++) {
-					base2after /= 2; //Tính 2^(-x) x=i-15
 					if (x.getBit(i))
 						value = value + base2after; //Nếu giá trị của bit = 1 thì cộng dồn vào giá trị sau dấu phẩy.
+					base2after /= 2; //Tính 2^(-x) x=i-15
 				}
+				
 				if (exp == 1) value++;
-
 				//In giá trị
 				//if (sign) cout << '-'; //Kiểm tra số âm.
 				//cout << value << "x2^" << Vexp << endl; //Xuất ra dạng x.xxxx*2^x
 				if (sign == 1) cout << '-';
-				if (Vexp > 0)
+				/*if (Vexp > 0)
 				{
 					for (i = 0; i < Vexp; i++)
 						value = value * 2;
@@ -138,8 +156,9 @@ void PrintQfloat(Qfloat x)
 						for (i = 0; i < -Vexp; i++)
 							value = value / 2;
 					}
-				}
+				}*/
 				// làm tròn
+				bool iszero = true;
 				for (int i = 0; i < value.m_float.length(); i++)
 				{
 					if (value.m_float[i] == '.')
@@ -148,10 +167,13 @@ void PrintQfloat(Qfloat x)
 						{
 							if (value.m_float[j] != '0')
 							{
+								iszero = false;
 								break;
 							}
 						}
-						value.m_float[i + 35] = '1';
+						if (iszero == true) {
+							value.m_float[i + 35] = '1';
+						}
 						break;
 					}
 				}
