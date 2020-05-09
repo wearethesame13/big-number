@@ -369,6 +369,7 @@ namespace CalculatorKTMT {
 			this->textBox2->Location = System::Drawing::Point(41, 85);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->ReadOnly = true;
 			this->textBox2->Size = System::Drawing::Size(274, 40);
 			this->textBox2->TabIndex = 25;
 			this->textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
@@ -378,6 +379,7 @@ namespace CalculatorKTMT {
 			this->textBox3->Location = System::Drawing::Point(41, 146);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
+			this->textBox3->ReadOnly = true;
 			this->textBox3->Size = System::Drawing::Size(274, 41);
 			this->textBox3->TabIndex = 26;
 			this->textBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
@@ -387,6 +389,7 @@ namespace CalculatorKTMT {
 			this->textBox4->Location = System::Drawing::Point(41, 200);
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
+			this->textBox4->ReadOnly = true;
 			this->textBox4->Size = System::Drawing::Size(274, 54);
 			this->textBox4->TabIndex = 27;
 			this->textBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
@@ -577,7 +580,7 @@ namespace CalculatorKTMT {
 				textBox3->Text = marshal_as<String^>(hex);
 				break;
 			case 3: // PHÉP NHÂN
-				/*bigInt = marshal_as<string>(i);
+				bigInt = marshal_as<string>(i);
 				ScanQInt(add, bigInt);
 				ans = num * add;
 				// Xuat Dec
@@ -594,10 +597,10 @@ namespace CalculatorKTMT {
 
 				// Xuat HEX
 				hex = DecToHex(ans);
-				textBox3->Text = marshal_as<String^>(hex); */
+				textBox3->Text = marshal_as<String^>(hex); 
 				break;
 			case 4: // PHÉP CHIA
-				/*bigInt = marshal_as<string>(i);
+				bigInt = marshal_as<string>(i);
 				ScanQInt(add, bigInt);
 				ans = num / add;
 				// Xuat Dec
@@ -614,7 +617,7 @@ namespace CalculatorKTMT {
 
 				// Xuat HEX
 				hex = DecToHex(ans);
-				textBox3->Text = marshal_as<String^>(hex);*/
+				textBox3->Text = marshal_as<String^>(hex);
 				break;
 			default:
 				break;

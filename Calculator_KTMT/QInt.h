@@ -29,6 +29,8 @@ public:
 	friend bool operator>=(const QInt a, const QInt b);
 	friend QInt operator+(const QInt a, const QInt b);
 	friend QInt operator-(const QInt a, const QInt b);
+	friend QInt operator*(QInt M, QInt Q);
+	friend QInt operator/(QInt Q, QInt M);
 	QInt ror(int n);
 	QInt rol(int n);
 };
