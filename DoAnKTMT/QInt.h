@@ -52,7 +52,7 @@ int rHexIndex(char hex);
 char* DecToHex(QInt x); //Chuyển đổi QInt thập phân sang thập lục phân
 bool getBitInt(int value, int pos); //Lấy bit tại vị trí pos từ trái sang
 char* vectorToStr(std::vector<char> x); //Chuyển đổi vector char về chuỗi
-bool* HexToBin(std::string x);
+bool* HexToBin1(std::string x);
 QInt HexToDec(std::string x);
 
 std::string HexToBin(std::string Hex);
