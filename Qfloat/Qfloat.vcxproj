@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D2D812F9-0E05-404E-8A1F-66B235490AE4}</ProjectGuid>
-    <RootNamespace>KTMTHN</RootNamespace>
+    <ProjectGuid>{23239194-10DF-4A71-8B71-74C3469297A9}</ProjectGuid>
+    <RootNamespace>Qfloat</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,17 +138,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinHex.cpp" />
     <ClCompile Include="Qfloat.cpp" />
-    <ClCompile Include="QfloatDecToBin.cpp" />
-    <ClCompile Include="QInt.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="StrFloat.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinHex.h" />
     <ClInclude Include="Qfloat.h" />
-    <ClInclude Include="QfloatDecToBin.h" />
-    <ClInclude Include="QInt.h" />
+    <ClInclude Include="StrFloat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

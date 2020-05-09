@@ -15,33 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BinHex.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QInt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Qfloat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QfloatDecToBin.cpp">
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StrFloat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinHex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="QInt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Qfloat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QfloatDecToBin.h">
+    <ClInclude Include="StrFloat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
