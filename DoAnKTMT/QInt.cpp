@@ -218,6 +218,64 @@ char HexIndex(int index)
 	}
 }
 
+int rHexIndex(char hex)
+{
+		switch (hex)
+	{
+	case '0':
+		return 0;
+		break;
+	case '1':
+		return 1;
+		break;
+	case '2':
+		return 2;
+		break;
+	case '3':
+		return 3;
+		break;
+	case '4':
+		return 4;
+		break;
+	case '5':
+		return 5;
+		break;
+	case '6':
+		return 6;
+		break;
+	case '7':
+		return 7;
+		break;
+	case '8':
+		return 8;
+		break;
+	case '9':
+		return 9;
+		break;
+	case 'A':
+		return 10;
+		break;
+	case 'B':
+		return 11;
+		break;
+	case 'C':
+		return 12;
+		break;
+	case 'D':
+		return 13;
+		break;
+	case 'E':
+		return 14;
+		break;
+	case 'F':
+		return 15;
+		break;
+	default:
+		return NULL;
+		break;
+	}
+}
+
 char* DecToHex(QInt x)
 {
 	bool* groupBit = new bool[4];
@@ -234,6 +292,39 @@ char* DecToHex(QInt x)
 	delete[]groupBit;
 	char* result = vectorToStr(tmp);
 	return result;
+}
+
+bool* HexToBin(std::string x)
+{
+	while(x.length() < 32)
+	{
+		x = '0' + x;
+	}
+	bool* tmp = new bool[4];
+	bool* kq = new bool[128];
+	for(int i = 0; i < x.length(); i++)
+	{
+		int s = rHexIndex(x[i]);
+		for(int j = 3; j >= 0; j--)
+		{
+			tmp[j] = s % 2;
+			s /= 2;
+		}
+		for(int k = 0; k < 4; k++)
+		{
+			kq[k + i * 4] = tmp[k];
+		}
+	}
+	delete[]tmp;
+	return kq;
+}
+
+QInt HexToDec(std::string x)
+{
+	bool* bin = HexToBin(x);
+	QInt kq = BinToDec(bin);
+	delete[]bin;
+	return kq;
 }
 
 bool getBitInt(int value, int pos)
