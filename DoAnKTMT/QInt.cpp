@@ -294,7 +294,7 @@ char* DecToHex(QInt x)
 	return result;
 }
 
-bool* HexToBin(std::string x)
+bool* HexToBin1(std::string x)
 {
 	while(x.length() < 32)
 	{
@@ -321,7 +321,7 @@ bool* HexToBin(std::string x)
 
 QInt HexToDec(std::string x)
 {
-	bool* bin = HexToBin(x);
+	bool* bin = HexToBin1(x);
 	QInt kq = BinToDec(bin);
 	delete[]bin;
 	return kq;
