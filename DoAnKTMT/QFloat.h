@@ -14,3 +14,4 @@ void setBitQFloat(QFloat& x, bool* bit);
 
 void ScanQFloat(QFloat& x);
 
+bool* DecToBin(Qfloat x);
