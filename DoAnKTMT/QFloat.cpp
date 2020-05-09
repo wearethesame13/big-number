@@ -31,11 +31,6 @@ void ScanQFloat(QFloat& x)
 	string BigFloat;
 	cin >> BigFloat;
 	bool* bit = StringFloatToBit(BigFloat);
-	for (int i = 0; i < 128; i++)
-	{
-		cout << bit[i];
-	}
-	puts("");
 	setBitQFloat(x, bit);
 }
 QFloat QFloat :: BinToDec(bool *bit)
