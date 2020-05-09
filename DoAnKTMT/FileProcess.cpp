@@ -171,22 +171,22 @@ void convertQFloat(string strIn)
 	ssIn >> p1 >> p2 >> strA;
 	int base1 = stoi(p1);
 	int base2 = stoi(p2);
+    	ofstream outQFloat;
+    	outQFloat.open("QFloat_output.txt",ios::app);
 	QFloat A;	
-    A.ScanQFloat(strA, base1);
-    outQFloat << PrintQFloat(A,base2)<<endl;
+    	A.ScanQFloat(strA, base1);
+    	outQFloat << PrintQFloat(A,base2)<<endl;
+    	outQFloat.close();
 }
 void readQFloat()
 {
     ifstream inQFloat;
-    ofstream outQFloat;
-    outQFloat.open("QFloat_output.txt");
-    inQFloat.open("QFloat_input.txt");
+    inQFloat.open("QFloat_input.txt",ios::in);
     while(!inQFloat.eof())
     {
-        std:: string strIn;
+        string strIn;
         getline(inQFloat,strIn);
         convertQFloat(strIn);
     }
-    inQFloat.close();
-    outQFloat.close();
+    inQFloat.close(); 
 }
