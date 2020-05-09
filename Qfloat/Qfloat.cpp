@@ -111,11 +111,9 @@ void PrintQfloat(Qfloat x)
 						Vexp = Vexp + base2;
 					base2 *= 2;
 				}
-				cout << Vexp << endl;
 				//Chuyển lại theo số Bias bằng cách trừ đi lượng MAX_VALUE_EXP nếu là số dạng không chuẩn thì trừ đi MAX_VALUE_EXP – 1.
 				if (Vexp != 0) Vexp = Vexp - 16383;
 				else Vexp = Vexp - 16382;
-				cout << "vexp:" << Vexp << endl;
 				//Chuyển đối giá trị sau dấu phẩy về dạng thập phân với 35 số sau dấu phẩy.
 				int index = -1;
 				index = index + Vexp;
