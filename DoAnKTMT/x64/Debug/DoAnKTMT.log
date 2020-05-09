@@ -1,10 +1,18 @@
-﻿  FileProcess.cpp
+﻿  BigNumber.cpp
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(27,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(116,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(144,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(173,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(186,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(248,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\anpha\projects\big-number\DoAnKTMT\BigNumber.cpp(334,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  FileProcess.cpp
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(17,16): error C2065: 'Qfloat': undeclared identifier
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(17,23): error C2146: syntax error: missing ')' before identifier 'x'
-C:\Users\anpha\projects\big-number\DoAnKTMT\FileProcess.cpp(164,17): error C2039: 'ScanQFloat': is not a member of 'QFloat'
+C:\Users\anpha\projects\big-number\DoAnKTMT\FileProcess.cpp(175,17): error C2039: 'ScanQFloat': is not a member of 'QFloat'
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(5): message : see declaration of 'QFloat'
-C:\Users\anpha\projects\big-number\DoAnKTMT\FileProcess.cpp(165,5): error C2065: 'outQFloat': undeclared identifier
-C:\Users\anpha\projects\big-number\DoAnKTMT\FileProcess.cpp(165,18): error C3861: 'PrintQFloat': identifier not found
+C:\Users\anpha\projects\big-number\DoAnKTMT\FileProcess.cpp(176,5): error C2065: 'outQFloat': undeclared identifier
+C:\Users\anpha\projects\big-number\DoAnKTMT\FileProcess.cpp(176,18): error C3861: 'PrintQFloat': identifier not found
   QFloat.cpp
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(17,16): error C2065: 'Qfloat': undeclared identifier
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(17,23): error C2146: syntax error: missing ')' before identifier 'x'
@@ -12,12 +20,7 @@ C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.cpp(45,16): error C2065: 'Qfl
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.cpp(45,23): error C2146: syntax error: missing ')' before identifier 'x'
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.cpp(46,1): error C2143: syntax error: missing ';' before '{'
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.cpp(46,1): error C2447: '{': missing function header (old-style formal list?)
-  QInt.cpp
-C:\Users\anpha\projects\big-number\DoAnKTMT\QInt.cpp(74,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\anpha\projects\big-number\DoAnKTMT\QInt.cpp(157,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   Source.cpp
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(17,16): error C2065: 'Qfloat': undeclared identifier
 C:\Users\anpha\projects\big-number\DoAnKTMT\QFloat.h(17,23): error C2146: syntax error: missing ')' before identifier 'x'
   Generating Code...
-C:\Users\anpha\projects\big-number\DoAnKTMT\QInt.cpp(88): warning C4172: returning address of local variable or temporary: bit
-C:\Users\anpha\projects\big-number\DoAnKTMT\QInt.cpp(810): warning C4715: 'operator/': not all control paths return a value

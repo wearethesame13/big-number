@@ -300,7 +300,7 @@ string StringDecPartToBit(string decimal)
 {
 	//NOTE: ham doi phan nhi phan sang bit
 	string result; int i = 0;
-	while (decimal != "0.0" && i < 113)
+	while (decimal != "0.0" && i < 200)
 	{
 		decimal = mul2Float(decimal);
 		if (decimal == "1.0")
