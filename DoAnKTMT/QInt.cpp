@@ -431,7 +431,7 @@ QInt operator-(const QInt a, const QInt b)
 		return a;
 	}
 	bool* temp = DecToBin(b);
-	layBu2(temp);
+	TwoCompliment(temp);
 	QInt tempQInt;
 	setBitQInt(tempQInt, temp);
 	return a + tempQInt; // cộng với bù 2 của b

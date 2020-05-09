@@ -1,4 +1,2 @@
-﻿  QInt.cpp
-F:\KTMT&HN\Đồ án 1\KTMTHN\DoAnKTMT\QInt.cpp(88,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-F:\KTMT&HN\Đồ án 1\KTMTHN\DoAnKTMT\QInt.cpp(746): warning C4715: 'operator/': not all control paths return a value
-  DoAnKTMT.vcxproj -> F:\KTMT&HN\Đồ án 1\KTMTHN\x64\Debug\DoAnKTMT.exe
+﻿  Source.cpp
+  DoAnKTMT.vcxproj -> C:\Users\anpha\projects\big-number\x64\Debug\DoAnKTMT.exe

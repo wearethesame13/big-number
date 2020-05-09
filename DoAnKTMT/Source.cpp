@@ -1,11 +1,14 @@
 #include <iostream>
 #include "QInt.h"
+#include "QFloat.h"
 using namespace std;
 
 
 int main()
 {
-	cout << "====================================" << endl;
+	QFloat x;
+	ScanQFloat(x);
+	/*cout << "====================================" << endl;
 	cout << "=   BIEU DIEN VA TINH TOAN SO HOC  =" << endl;
 	cout << "=         BANG QINT 16 BYTE        =" << endl;
 	cout << "=                                  =" << endl;
@@ -127,7 +130,7 @@ int main()
 		default:
 			break;
 		}
-	}
+	}*/
 	return 0;
 
 }
