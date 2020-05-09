@@ -329,7 +329,7 @@ bool* StringFloatToBit(string BigFloat)
 	string wholebit = StringIntToBit(whole);
 	string decbit = StringDecPartToBit(dec);
 	string FractionBit = wholebit + decbit;
-	int E = whole.size() - 1;
+	int E = wholebit.size() - 1;
 	for (int i = 0; i < FractionBit.size(); i++)
 	{
 		if (FractionBit[i] == '1')
