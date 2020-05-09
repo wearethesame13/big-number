@@ -9,9 +9,8 @@ public:
 	QFloat();
 	~QFloat();
 	QFloat BinToDec(bool *bit);
+	QFloat ScanQFloat(string str, int base1);
+   	QFloat ScanQFloatBase10( string str);
 };
 void setBitQFloat(QFloat& x, bool* bit);
-
-void ScanQFloat(QFloat& x);
-
 bool* DecToBin(Qfloat x);
