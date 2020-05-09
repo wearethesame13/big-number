@@ -162,8 +162,6 @@ void convertQFloat(string strIn)
 	int base2 = stoi(p2);
 	QFloat A;	
     A.ScanQFloat(strA, base1);
-    ofstream outQFloat;
-    outQFloat.open("QFloat_output.txt");
     outQFloat << PrintQFloat(A,base2)<<endl;
 }
 void readQFloat()
