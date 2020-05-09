@@ -8,6 +8,7 @@ public:
 	int data[4];
 	QFloat();
 	~QFloat();
+	QFloat BinToDec(bool *bit);
 };
 void setBitQFloat(QFloat& x, bool* bit);
 
