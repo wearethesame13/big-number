@@ -220,9 +220,9 @@ string StrBitToInt(bool* bit)
 
 	if (negative)
 		result = '-' + result;
-
+	if (result == "")
+		result = "0";
 	return result;
-
 }
 
 string mul2Float(string BFloat)
