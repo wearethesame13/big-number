@@ -1,1 +1,5 @@
-﻿  Calculator_KTMT.vcxproj -> D:\source calculator\big-number\x64\Debug\Calculator_KTMT.exe
+﻿  MyForm.cpp
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\MyForm.h(629,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\MyForm.h(672,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+  BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Calculator_KTMT.vcxproj -> F:\KTMT&HN\Đồ án 1\KTMTHN\x64\Debug\Calculator_KTMT.exe

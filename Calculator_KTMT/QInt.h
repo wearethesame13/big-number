@@ -46,5 +46,5 @@ bool getBitInt(int value, int pos); //Lấy bit tại vị trí pos từ trái s
 char* vectorToStr(std::vector<char> x); //Chuyển đổi vector char về chuỗi
 // And , Or, Xor, Not
 
-QInt TwoCompliment(const QInt a);
+void layBu2(bool* bit);
 bool* xuLyChuoiBit(std::string bo);

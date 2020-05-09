@@ -62,6 +62,8 @@ namespace CalculatorKTMT {
 	private: System::Windows::Forms::Button^ button18;
 	private: System::Windows::Forms::Button^ button19;
 	private: System::Windows::Forms::Button^ button20;
+
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
@@ -721,7 +723,8 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 	label1->Text = marshal_as<String^>(PrintQInt(num)) + "+";
 
 }
-private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) 
+{
 	if (radioButton2->Checked)
 	{
 		computeDec();

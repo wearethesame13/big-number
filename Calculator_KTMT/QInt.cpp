@@ -393,12 +393,9 @@ bool* xuLyChuoiBit(std::string bo)
 QInt operator+(const QInt a, const QInt b)
 {
 	int nho = 0;
+	QInt num_zero;
 	bool* bin1 = DecToBin(a);
 	bool* bin2 = DecToBin(b);
-	if (bin1[0] == 1 && bin2[0] == 1)
-	{
-		cout << "Xay ra hien tuong tran so!!!" << endl;
-	}
 	bool* binResult = new bool[128];
 	QInt result;
 	for (int i = 127; i >= 0; i--)
@@ -425,13 +422,34 @@ QInt operator+(const QInt a, const QInt b)
 			nho = 0;
 		}
 	}
-
 	setBitQInt(result, binResult);
 	return result;
 }
 QInt operator-(const QInt a, const QInt b)
 {
-	return a + TwoCompliment(b); // cộng với bù 2 của b
+	QInt num_zero;
+	int flag = 1;
+	for (int i = 0; i < 4; i++)
+	{
+		if (b.data[i] == 0)
+		{
+			continue;
+		}
+		else
+		{
+			flag = 0;
+			break;
+		}
+	}
+	if (flag == 1)
+	{
+		return a;
+	}
+	bool* temp = DecToBin(b);
+	layBu2(temp);
+	QInt tempQInt;
+	setBitQInt(tempQInt, temp);
+	return a + tempQInt; // cộng với bù 2 của b
 }
 QInt& QInt::operator=(const QInt b)
 {
@@ -441,109 +459,229 @@ QInt& QInt::operator=(const QInt b)
 	}
 	return *this;
 }
-QInt TwoCompliment(const QInt a)
-{
-	QInt result;
-	for (int i = 0; i < 4; i++)
-	{
-		result.data[i] = ~a.data[i];
-	}
-	QInt bit1;
-	bit1.data[3] = 1;
-	return result + bit1;
-}
+
 bool operator<(const QInt a, const QInt b)
 {
-	for (int i = 3; i >= 0; i--)
-	{
-		if (a.data[i] < b.data[i])
-		{
-			return true;
-		}
-		else if (a.data[i] > b.data[i])
-		{
-			return false;
-		}
-		else if (a.data[i] == b.data[i])
-		{
-			continue;
-		}
+	QInt hieu = a - b;
+	bool* binHieu;
+	binHieu = DecToBin(hieu);
+	int kt0 = 1;		//kiem tra bang 0
+	for (int i = 127; i >= 1; i--) {
+		if (binHieu[i] != 0)
+			kt0 = 0;
 	}
-	return false;
+	if (kt0 == 1) return 0;	//neu hieu 0-> so sanh return 0
+	return binHieu[0] == 1 ? 1 : 0;	//neu hieu != 0 ->so sanh dau (bit[0])
 }
 bool operator==(const QInt a, const QInt b)
 {
-	for (int i = 3; i >= 0; i--)
+	QInt hieu = a - b;
+	bool* binHieu = DecToBin(hieu);
+	for (int i = 0; i < 128; i++)
 	{
-		if (a.data[i] < b.data[i])
+		if (binHieu[i] == 1)
 		{
 			return false;
-		}
-		else if (a.data[i] > b.data[i])
-		{
-			return false;
-		}
-		else if (a.data[i] == b.data[i])
-		{
-			continue;
 		}
 	}
 	return true;
 }
 bool operator>(const QInt a, const QInt b)
 {
-	for (int i = 3; i >= 0; i--)
+	QInt hieu = a - b;
+	bool* binHieu = DecToBin(hieu);
+	int flag = 1;
+	for (int i = 127; i >= 1; i--)
 	{
-		if (a.data[i] < b.data[i])
-		{
-			return false;
-		}
-		else if (a.data[i] > b.data[i])
-		{
-			return true;
-		}
-		else if (a.data[i] == b.data[i])
+		if (binHieu[i] == 0)
 		{
 			continue;
 		}
+		else flag = 0;
 	}
-	return false;
+	if (flag == 1) return 0;
+	if (binHieu[0] == 0)
+	{
+		return 1;
+	}
+	else return 0;
 }
 bool operator<=(const QInt a, const QInt b)
 {
-	for (int i = 3; i >= 0; i--)
+	QInt hieu = a - b;
+	bool* binHieu = DecToBin(hieu);
+	int flag = 1;
+	for (int i = 127; i >= 1; i--)
 	{
-		if (a.data[i] < b.data[i])
-		{
-			return true;
-		}
-		else if (a.data[i] > b.data[i])
-		{
-			return false;
-		}
-		else if (a.data[i] == b.data[i])
+		if (binHieu[i] == 0)
 		{
 			continue;
 		}
+		else flag = 0;
 	}
-	return true;
+	if (flag == 1) return 1;
+	if (binHieu[0] == 1)
+	{
+		return 1;
+	}
+	else return 0;
 }
 bool operator>=(const QInt a, const QInt b)
 {
-	for (int i = 3; i >= 0; i--)
+	QInt hieu = a - b;
+	bool* binHieu = DecToBin(hieu);
+	int flag = 1;
+	for (int i = 127; i >= 1; i--)
 	{
-		if (a.data[i] < b.data[i])
-		{
-			return false;
-		}
-		else if (a.data[i] > b.data[i])
-		{
-			return true;
-		}
-		else if (a.data[i] == b.data[i])
+		if (binHieu[i] == 0)
 		{
 			continue;
 		}
+		else flag = 0;
 	}
-	return true;
+	if (flag == 1) return 1;
+	if (binHieu[0] == 0)
+	{
+		return 1;
+	}
+	else return 0;
+}
+
+QInt operator*(QInt M, QInt Q)
+{
+	QInt A;
+	QInt num_zero;
+	int k = 128;
+	bool Q1 = 0;
+	bool* result = new bool[128];
+	QInt resultQInt;
+	while (k > 0)
+	{
+		bool* bitQ = DecToBin(Q);
+		if (bitQ[127] == 1 && Q1 == 0)
+		{
+			A = A - M;
+		}
+		if (bitQ[127] == 0 && Q1 == 1)
+		{
+			A = A + M;
+		}
+		Q1 = bitQ[127];
+		for (int i = 127; i >= 1; i--)
+		{
+			bitQ[i] = bitQ[i - 1];
+		}
+		bool* bitA = DecToBin(A);
+		bool lastBit = bitA[127];
+		bitQ[0] = lastBit;
+		for (int i = 127; i >= 1; i--)
+		{
+			bitA[i] = bitA[i - 1];
+		}
+		bitA[0] = 0;
+		A = BinToDec(bitA);
+		Q = BinToDec(bitQ);
+		k = k - 1;
+	}
+	bool* bitA = DecToBin(A);
+	bool* bitQ = DecToBin(Q);
+	if (A == num_zero)
+	{
+		cout << "Xay ra hien tuong tran so!!! Ket qua khong the bieu dien duoi dang QInt" << endl;
+	}
+	for (int i = 0; i < 128; i++)
+	{
+		result[i] = bitQ[i];
+	}
+	resultQInt = BinToDec(result);
+	return resultQInt;
+}
+void layBu2(bool* bit)
+{
+	for (int i = 0; i < 128; i++) {
+		if (bit[i] == 0) bit[i] = 1;
+		else bit[i] = 0;
+	}
+	int tempNho = 1;
+	int i = 128 - 1;
+	while (tempNho == 1 && i >= 0)
+	{
+		int temp = bit[i] + tempNho;
+		if (temp == 1) {
+			bit[i] = 1;
+			tempNho = 0;
+		}
+		else {
+			bit[i] = 0;
+			tempNho = 1;
+		}
+		i--;
+	}
+	if (tempNho == 1) {
+		bit[0] = 1;
+	}
+}
+QInt operator/(QInt Q, QInt M)
+{
+	QInt num_zero;
+	int k = 128;
+	QInt A;
+	int sign = 0;
+	if (Q < num_zero && M < num_zero)
+	{
+		Q = num_zero - Q;
+		M = num_zero - M;
+	}
+	if (Q > num_zero && M < num_zero)
+	{
+		M = num_zero - M;
+		sign = 1;
+	}
+	if (Q < num_zero && M > num_zero)
+	{
+		Q = num_zero - Q;
+		sign = 1;
+	}
+	while (k > 0)
+	{
+		//Shift left [A, Q]
+		bool* bitA = DecToBin(A);
+		bool* bitQ = DecToBin(Q);
+		for (int i = 0; i < 127; i++)
+		{
+			bitA[i] = bitA[i + 1];
+		}
+		bitA[127] = bitQ[0];
+		for (int i = 0; i < 127; i++)
+		{
+			bitQ[i] = bitQ[i + 1];
+		}
+		bitQ[127] = 0;
+
+		Q = BinToDec(bitQ);
+		A = BinToDec(bitA);
+		A = A - M;
+		if (A < num_zero)
+		{
+			bool* bitQ = DecToBin(Q);
+			bitQ[127] = 0;
+			Q = BinToDec(bitQ);
+			A = A + M;
+		}
+		else
+		{
+			bool* bitQ = DecToBin(Q);
+			bitQ[127] = 1;
+			Q = BinToDec(bitQ);
+		}
+		k = k - 1;
+	}
+	if (sign == 0)
+	{
+		return Q;
+	}
+	if (sign == 1)
+	{
+		return num_zero - Q;
+	}
 }
