@@ -56,6 +56,75 @@ void ScanQInt(QInt& x)
 	delete[] bit;
 }
 
+void ScanInt(QInt& x, string bigInt)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+	bool* bit = NULL;
+	bit = InsertPreBit(bigInt, StringIntToBit(bigInt));
+	setBitQInt(x, bit);
+	delete[] bit;
+}
+
+bool* MakeBit(string StrBit)
+{
+	bool bit[128] = { false };
+	int tempSize = StrBit.size();
+	int j = tempSize - 1;
+	for (int i = 127; i >= 0; i--)
+	{
+		if (j >= 0)
+		{
+			if (StrBit[j] == '0')
+				bit[i] = 0;
+			else
+				bit[i] = 1;
+			j--;
+		}
+		else break;
+	}
+	return bit;
+}
+
+void ScanBin(QInt& x, string strBin)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+	bool* bit = NULL;
+	bit = MakeBit(strBin);
+	setBitQInt(x, bit);
+}
+
+string convertBintoDec(QInt x)
+{
+	bool* bit = DecToBin(x);
+	std::string num;
+	num = StrBitToInt(bit);
+	return num;
+}
+string convertDectoBin(QInt x)
+{
+	bool* bit = DecToBin(x);
+	std::string num;
+	string result = "";
+	bool flag = false;
+	for (int i = 0; i < 128; i++)
+	{
+		if (bit[i] == 1)
+			result = result + "1";
+		else
+			result = result + "0";
+	}
+	while (result[0] == '0') result.erase(result.begin());
+	if (result == "") result = "0";
+	return result;
+}
+
+
 void PrintQInt(QInt x)
 {
 	bool* bit = DecToBin(x);

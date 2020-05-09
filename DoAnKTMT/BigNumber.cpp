@@ -324,81 +324,64 @@ string StringDecPartToBit(string decimal)
 bool* StringFloatToBit(string BigFloat)
 {
 	bool* bit = new bool[128];
-	string whole, dec;
-	BarFloat(BigFloat, whole, dec);
-	string wholebit = StringIntToBit(whole);
-	string decbit = StringDecPartToBit(dec);
-	string FractionBit = wholebit + decbit;
-	int E = wholebit.size() - 1;
-	for (int i = 0; i < FractionBit.size(); i++)
+	if (BigFloat != "0.0")
 	{
-		if (FractionBit[i] == '1')
+		string whole, dec;
+		BarFloat(BigFloat, whole, dec);
+		string wholebit = StringIntToBit(whole);
+		string decbit = StringDecPartToBit(dec);
+		string FractionBit = wholebit + decbit;
+		int E = wholebit.size() - 1;
+		for (int i = 0; i < FractionBit.size(); i++)
 		{
-			E = E - i;
-			break;
+			if (FractionBit[i] == '1')
+			{
+				E = E - i;
+				break;
+			}
+		}
+		while (FractionBit[0] == '0') FractionBit.erase(FractionBit.begin());
+		if (FractionBit[0] == '1') FractionBit.erase(FractionBit.begin());
+		while (FractionBit.size() < 112)
+		{
+			FractionBit = FractionBit + "0";
+		}
+
+		string Expo = to_string(E);
+		string bias = "16383";
+		Expo = add(bias, Expo);
+		string ExpoBit = StringIntToBit(Expo);
+		while (ExpoBit.size() < 15)
+		{
+			ExpoBit = "0" + ExpoBit;
+		}
+
+		if (BigFloat[0] == '-')
+			bit[0] = 1;
+		else
+			bit[0] = 0;
+
+		for (int i = 0; i < 15; i++)
+		{
+			if (ExpoBit[i] == '0')
+				bit[1 + i] = 0;
+			else bit[1 + i] = 1;
+		}
+
+		for (int i = 0; i < 112; i++)
+		{
+			if (FractionBit[i] == '0')
+				bit[16 + i] = 0;
+			else bit[16 + i] = 1;
 		}
 	}
-	while (FractionBit[0] == '0') FractionBit.erase(FractionBit.begin());
-	if(FractionBit[0] == '1') FractionBit.erase(FractionBit.begin());
-	while (FractionBit.size() < 112)
-	{
-		FractionBit = FractionBit + "0";
-	}
-
-	string Expo = to_string(E);
-	string bias = "16383";
-	Expo = add(bias, Expo);
-	string ExpoBit = StringIntToBit(Expo);
-	while (ExpoBit.size() < 15)
-	{
-		ExpoBit = "0" + ExpoBit;
-	}
-
-	if (BigFloat[0] == '-')
-		bit[0] = 1;
 	else
-		bit[0] = 0;
-
-	for (int i = 0; i < 15; i++)
 	{
-		if (ExpoBit[i] == '0')
-			bit[1 + i] = 0;
-		else bit[1 + i] = 1;
-	}
-
-	for (int i = 0; i < 112; i++)
-	{
-		if (FractionBit[i] == '0')
-			bit[16 + i] = 0;
-		else bit[16 + i] = 1;
+		for (int i = 0; i < 128; i++)
+			bit[i] = 0;
 	}
 
 	return bit;
 }
 
 
-bool* MakeBit(string StrBit)
-{
-	bool bit[128] = {false};
-	int tempSize = StrBit.size();
-
-	for (int i = 0; i < 128; i++)
-	{
-
-		if (i >= 128 - tempSize)
-			if (StrBit[i - (128 - tempSize)] == '1')
-			{
-				bit[i] = 1;
-				continue;
-			}
-			else if(StrBit[i - (128 - tempSize)] == '0')
-				bit[i] = 0;
-	}
-	cout << "Day bit: ";
-	for (int i = 0; i < 128; i++)
-	{
-		cout << bit[i];
-	}
-	puts("");
-	return bit;
-}

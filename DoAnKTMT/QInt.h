@@ -39,6 +39,12 @@ QInt BinToDec(bool* bit);
 void ScanQInt(QInt& x);
 void PrintQInt(QInt x);
 
+void ScanInt(QInt& x, std::string bigInt);
+bool* MakeBit(std::string StrBit);
+void ScanBin(QInt& x, std::string strBin);
+std::string convertBintoDec(QInt x);
+std::string convertDectoBin(QInt x);
+
 char* BinToHex(bool* bit); //Chuyển đổi QInt nhị phân sang thập lục phân, bit có độ dài 128
 char GroupBinToHex(bool* bit); //Chuyển dãy 4 bit thành kí tự Hex, bit có độ dài 4
 char HexIndex(int index);
