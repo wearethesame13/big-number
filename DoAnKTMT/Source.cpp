@@ -92,9 +92,37 @@ int main()
 			break;
 		case(9):
 			//Them chuc nang
+			ScanQInt(a);
+			ScanQInt(b);
+			cout<<"a & b = ";
+			PrintQInt(a&b);
+			cout<<"a | b = ";
+			PrintQInt(a|b);
+			cout<<"a ^ b = ";
+			PrintQInt(a^b);
+			cout<<"~a = ";
+			PrintQInt(~a);
 			break;
 		case(10):
 			//Them chuc nang
+			ScanQInt(a);
+			int n;
+			cout<<"Dich phai bao nhieu bit: ";
+			cin>>n;
+			cout<<"a >> "<<n<<" =";
+			PrintQInt(a>>n);
+			cout<<"Dich trai bao nhieu bit: ";
+			cin>>n;
+			cout<<"a << "<<n<<" =";
+			PrintQInt(a<<n)
+			cout<<"Xoay phai bao nhieu bit: ";
+			cin>>n;
+			cout<<"a ror "<<n<<" =";
+			PrintQInt(a.ror(n));
+			cout<<xoay trai bao nhieu bit: ";
+			cin>>n;
+			cout<<"a rol "<<n<<" =";
+			PrintQInt(a.rol(n));
 			break;
 		default:
 			break;
