@@ -1,14 +1,32 @@
 #include <iostream>
 #include "QInt.h"
 #include "QFloat.h"
+#include <fstream>
+#include "FileProcess.h"
 using namespace std;
 
 
-int main()
+int main(int argc, char* args[])
 {
-	QFloat x;
-	ScanQFloat(x);
-	/*cout << "====================================" << endl;
+	std::fstream fin, fout;
+	fin.open(args[1], std::ios::in);
+	fout.open(args[2], std::ios::out);
+	std::string line, output;
+	while (!fin.eof()) {
+		getline(fin, line);
+		if (count(line.begin(), line.end(), ' ') == 2)
+		{
+			output = convert(line);
+		}
+		else
+		{
+			output = operate(line);
+		}
+		fout << output << endl;
+	}
+	fin.close();
+	fout.close();
+	cout << "====================================" << endl;
 	cout << "=   BIEU DIEN VA TINH TOAN SO HOC  =" << endl;
 	cout << "=         BANG QINT 16 BYTE        =" << endl;
 	cout << "=                                  =" << endl;
@@ -117,7 +135,7 @@ int main()
 			cout<<"Dich trai bao nhieu bit: ";
 			cin>>n;
 			cout<<"a << "<<n<<" =";
-			PrintQInt(a<<n)
+			PrintQInt(a << n);
 			cout<<"Xoay phai bao nhieu bit: ";
 			cin>>n;
 			cout<<"a ror "<<n<<" =";
@@ -130,7 +148,7 @@ int main()
 		default:
 			break;
 		}
-	}*/
+	}
 	return 0;
 
 }
