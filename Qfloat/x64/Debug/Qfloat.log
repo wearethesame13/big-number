@@ -1,3 +1,2 @@
 ﻿  Source.cpp
-D:\Qfloat source git\big-number\Qfloat\Source.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Qfloat.vcxproj -> D:\Qfloat source git\big-number\x64\Debug\Qfloat.exe
+  Qfloat.vcxproj -> C:\Users\anpha\projects\big-number\x64\Debug\Qfloat.exe

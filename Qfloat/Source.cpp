@@ -2,25 +2,71 @@
 #include <ctime>
 #include <cstdlib>
 #include "Qfloat.h"
-
+#include "FileProces.h"
 using namespace std;
 
 
-int main()
+int main(int argc, char* args[])
 {
-	srand(time(NULL));
-	Qfloat a;
-	bool* c = new bool[128];
-	for (int i = 0; i < 128; i++)
-	{
-		c[i] = 0;
+	std::fstream fin, fout;
+	fin.open(args[1], std::ios::in);
+	fout.open(args[2], std::ios::out);
+	std::string line, output;
+	while (!fin.eof()) {
+		getline(fin, line);
+		output = convert(line);
+		fout << output << endl;
 	}
-	c[0] = 0;
-	c[1] = 1;
-	c[15] = 1;
-	c[16] = 1;
-	c[18] = 1;
-	setBitQfloat(a, c);
-	PrintQfloat(a);
+	fin.close();
+	fout.close();
+
+	cout << "====================================" << endl;
+	cout << "=   BIEU DIEN VA TINH TOAN SO HOC  =" << endl;
+	cout << "=       BANG QFLOAT 16 BYTE        =" << endl;
+	cout << "=                                  =" << endl;
+	cout << "=      Nhom wearethesame 18/2      =" << endl;
+	cout << "====================================" << endl;
+	int stt;
+	Qfloat X;
+	string tmp;
+	while (true)
+	{
+		cout << "\nMenu chuc nang chinh" << endl;
+		cout << "0.  Thoat\n"
+			<< "1.  Nhap so thuc he 10\n"
+			<< "2.  Xuat so thuc he 10\n"
+			<< "3.  Doi so thuc he 10 sang he 2\n"
+			<< "4.  Doi so thuc he 2 sang he 10\n";
+
+		cout << "Ban chon: ";
+		cin >> stt;
+		switch (stt) {
+		case(0):
+			return 0;
+		case(1):
+			ScanQFloat(X);
+			cout << "Da luu vao Qfloat" << endl;
+			break;
+		case(2):
+			cout << "QFloat vua nhap: ";
+			PrintQfloat(X);
+			break;
+		case(3):
+			ScanQFloat(X);
+			cout << "128bit Floating point: " << GetBin(X) << endl;
+			break;
+		case(4):
+		{
+			cout << "Nhap chuoi bit: ";
+			string a;
+			cin >> a;
+			ScanQfloat(X, a);
+			cout << "Decimal: " << GetFloat(X) << endl;
+			break; 
+		}
+		default:
+			break;
+		}
+	}
 	return 0;
 }

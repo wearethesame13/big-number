@@ -77,24 +77,33 @@ void setBitExponent(int& intExp, bool* bit)
 
 void PrintQfloat(Qfloat x)
 {
+	cout << GetFloat(x) << endl;
+}
+
+string GetFloat(Qfloat x)
+{
 	//Lấy loại của QFloat. 
 	int exp = x.getTypeOfQfloat();
 	StrFloat value("0.0");
 	if (exp == 0)
 	{
-		cout << 0;
+		return ("0.0");
 	}
 	else
 	{
 		if (exp == 3)
 		{
-			cout << (x.checkBitScope(0, 0, 1) == true ? "-" : "") << "Infinite" << endl;
+			//cout << (x.checkBitScope(0, 0, 1) == true ? "-" : "") << "Infinite" << endl;
+			if (x.checkBitScope(0, 0, 1))
+				return "-Infinite";
+			else
+				return "Infinite";
 		}
 		else
 		{
 			if (exp == 4)
 			{
-				cout << "NaN" << endl;
+				return "NaN";
 			}
 			else
 			{
@@ -115,7 +124,6 @@ void PrintQfloat(Qfloat x)
 				if (Vexp != 0) Vexp = Vexp - 16383;
 				else Vexp = Vexp - 16382;
 				//Chuyển đối giá trị sau dấu phẩy về dạng thập phân với 35 số sau dấu phẩy.
-				cout << Vexp << endl;
 				int index = -1;
 				index = index + Vexp;
 				if (index < 0) {
@@ -137,7 +145,7 @@ void PrintQfloat(Qfloat x)
 						value = value + base2after; //Nếu giá trị của bit = 1 thì cộng dồn vào giá trị sau dấu phẩy.
 					base2after /= 2; //Tính 2^(-x) x=i-15
 				}
-				
+
 				if (exp == 1) value++;
 				//In giá trị
 				//if (sign) cout << '-'; //Kiểm tra số âm.
@@ -163,8 +171,81 @@ void PrintQfloat(Qfloat x)
 						break;
 					}
 				}
-				cout << value << endl;
+				return value.m_float;
 			}
 		}
 	}
 }
+
+string GetBin(Qfloat x)
+{
+	string result = "";
+	for (int i = 0; i < 128; i++)
+	{
+		if (x.getBit(i))
+			result = result + "1";
+		else
+			result = result + "0";
+	}
+	return result;
+}
+
+void ScanQFloat(Qfloat& x)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+	cout << "Nhap so thuc: ";
+	string BigFloat;
+	cin >> BigFloat;
+	
+	bool* bit = StringFloatToBit(BigFloat);
+
+	setBitQfloat(x, bit);
+}
+
+void ScanQfloat(Qfloat& x, string num)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+
+	bool* bit = StringFloatToBit(num);
+
+	setBitQfloat(x, bit);
+}
+
+void ScanBin(Qfloat& x, string StrBin)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+	bool* bit = NULL;
+	bit = MakeBit(StrBin);
+	setBitQfloat(x, bit);
+}
+
+bool* MakeBit(string StrBit)
+{
+	bool bit[128] = { false };
+	int tempSize = StrBit.size();
+	int j = tempSize - 1;
+	for (int i = 127; i >= 0; i--)
+	{
+		if (j >= 0)
+		{
+			if (StrBit[j] == '0')
+				bit[i] = 0;
+			else
+				bit[i] = 1;
+			j--;
+		}
+		else break;
+	}
+	return bit;
+}
+
+

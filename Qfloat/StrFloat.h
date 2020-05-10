@@ -26,3 +26,13 @@ public:
 	friend istream& operator>>(istream& is, StrFloat& p);
 	friend ostream& operator<<(ostream& os, const StrFloat& p);
 };
+
+void BarFloat(string src, string& whole, string& dec);
+bool* StringFloatToBit(string BigFloat);
+string StringIntToBit(string x);
+string StringDecPartToBit(string decimal);
+string add(string numA, string numB);
+string div2(string obj);
+
+void TwoCompliment(string& StrBit);
+string mul2Float(string BFloat);
