@@ -19,7 +19,7 @@ public:
 	StrFloat operator+(const StrFloat& p);
 	StrFloat& operator=(const StrFloat& p);
 	StrFloat& operator/(int p);
-	StrFloat& operator*(int p);
+	StrFloat operator*(int p);
 	StrFloat operator/=(int p);
 	StrFloat operator++(int x);
 	StrFloat operator+=(const StrFloat& p);

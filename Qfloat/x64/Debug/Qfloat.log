@@ -1,7 +1,3 @@
-﻿  Qfloat.cpp
-D:\Qfloat source git\big-number\Qfloat\Qfloat.cpp(18,38): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
-D:\Qfloat source git\big-number\Qfloat\Qfloat.cpp(24,38): warning C4554: '>>': check operator precedence for possible error; use parentheses to clarify precedence
-D:\Qfloat source git\big-number\Qfloat\Qfloat.cpp(32,22): warning C4805: '!=': unsafe mix of type 'bool' and type 'int' in operation
-D:\Qfloat source git\big-number\Qfloat\Qfloat.cpp(65,42): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
-D:\Qfloat source git\big-number\Qfloat\Qfloat.cpp(74,29): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
+﻿  Source.cpp
+D:\Qfloat source git\big-number\Qfloat\Source.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Qfloat.vcxproj -> D:\Qfloat source git\big-number\x64\Debug\Qfloat.exe

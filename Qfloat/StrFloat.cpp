@@ -176,7 +176,7 @@ StrFloat& StrFloat::operator/(int p)
 }
 
 //Nhân xâu m_float cho số nhân p
-StrFloat& StrFloat::operator*(int p)
+StrFloat StrFloat::operator*(int p)
 {
 	//Kiểm tra số nhân là âm thì đổi dấu của kết quả.
 	if (p < 0) {
@@ -202,8 +202,9 @@ StrFloat& StrFloat::operator*(int p)
 	}
 	reverse(res.m_float.begin(), res.m_float.end());//Đảo ngược xâu kết quả để cho kết quả đúng.
 	res.normalize(); //Chuẩn hóa kết quả.
-	(*this) = res;
-	return (*this);
+	/*(*this) = res;
+	return (*this);*/
+	return res;
 }
 
 StrFloat StrFloat::operator/=(int p)

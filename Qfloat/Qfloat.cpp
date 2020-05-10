@@ -115,6 +115,7 @@ void PrintQfloat(Qfloat x)
 				if (Vexp != 0) Vexp = Vexp - 16383;
 				else Vexp = Vexp - 16382;
 				//Chuyển đối giá trị sau dấu phẩy về dạng thập phân với 35 số sau dấu phẩy.
+				cout << Vexp << endl;
 				int index = -1;
 				index = index + Vexp;
 				if (index < 0) {

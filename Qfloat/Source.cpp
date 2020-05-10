@@ -16,11 +16,10 @@ int main()
 		c[i] = 0;
 	}
 	c[0] = 0;
-	c[1] = 0;
-	for (int i = 2; i < 16; i++)
-	{
-		c[i] = 1;
-	}
+	c[1] = 1;
+	c[15] = 1;
+	c[16] = 1;
+	c[18] = 1;
 	setBitQfloat(a, c);
 	PrintQfloat(a);
 	return 0;
