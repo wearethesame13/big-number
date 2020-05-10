@@ -26,6 +26,7 @@ int main(int argc, char* args[])
 	}
 	fin.close();
 	fout.close();
+	// Menu
 	cout << "====================================" << endl;
 	cout << "=   BIEU DIEN VA TINH TOAN SO HOC  =" << endl;
 	cout << "=         BANG QINT 16 BYTE        =" << endl;

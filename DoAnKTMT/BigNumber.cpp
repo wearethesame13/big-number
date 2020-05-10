@@ -1,5 +1,7 @@
 #include "BigNumber.h"
 #include <iostream>
+
+//Chia 2
 string div2(string obj)
 {
 	string result = "";
@@ -15,7 +17,7 @@ string div2(string obj)
 	return result;
 }
 
-
+//Xu ly bu 2
 void TwoCompliment(string &StrBit) {
 	for (int i = 0; i < StrBit.size(); i++)
 		if (StrBit[i] == '0') StrBit[i] = '1';
@@ -48,6 +50,7 @@ void TwoCompliment(string &StrBit) {
 	}*/
 }
 
+//Giai bu 2
 void DeTwoCompliment(bool* bit)
 {
 	int rem = 1;
@@ -77,6 +80,7 @@ void DeTwoCompliment(bool* bit)
 
 }
 
+//Doi so nguyen thanh he 2 
 string StringIntToBit(string x) {
 
 	bool negative = false;
@@ -105,6 +109,7 @@ string StringIntToBit(string x) {
 	return temp;
 }
 
+//Them bit khong vao dau
 bool* InsertPreBit(string Num, string tempBit)
 {
 	bool negative = false;
@@ -134,7 +139,7 @@ bool* InsertPreBit(string Num, string tempBit)
 	return bit;
 }
 
-
+//Nhan so lon cho 2
 string multiply2(string bigNum)
 {
 	int temp; 
@@ -155,6 +160,7 @@ string multiply2(string bigNum)
 	return result;
 }
 
+//cong A va B duong, hoac A duong B am |A| > |B|
 string add(string numA, string numB)
 {
 	//Neu co 1 trong 2 so am, thi so B se la so am
@@ -200,6 +206,7 @@ string add(string numA, string numB)
 	return result;
 }
 
+//Thuc hien nhan 2 N lan
 string RepeatedMul2(string num, int time)
 {
 	for (int i = 0; i < time; i++)
@@ -209,6 +216,7 @@ string RepeatedMul2(string num, int time)
 	return num;
 }
 
+//Doi day bit(bool) thanh bigInt(string)
 string StrBitToInt(bool* bit)
 {
 	bool negative = false;
@@ -239,149 +247,5 @@ string StrBitToInt(bool* bit)
 
 }
 
-string mul2Float(string BFloat) 
-{
-	//Chi nhan cho so duong va nho hon 1
-
-	string result = "";
-	int temp = 0, rem = 0;
-	for (int i = BFloat.size() - 1; i >= 0; i--)
-	{
-		if (BFloat[i] == '.')
-			break;
-
-			temp = (int)(BFloat[i] - '0') * 2 + rem;
-			rem = temp / 10;
-			temp = temp % 10;
-			result = (char)(temp + '0') + result;
-
-	}
-	result = "." + result;
-	if (rem)
-	{
-		result = "1" + result;
-	}
-	else
-	{
-		result = "0" + result;
-	}
-	while (result[result.size() - 1] == '0') result.pop_back();
-	if (result == "1.")
-		result = "1.0";
-	return result;
-
-}
-
-void BarFloat(string src, string& whole, string& dec)
-{
-	whole = "";
-	dec = "";
-	int i = 0;
-	for (i; i < src.size(); i++)
-	{
-		if (src[i] == '.')
-			break;
-		else if (src[i] != '-')
-			whole = whole + src[i];
-	}
-	i++;
-	for (i; i < src.size(); i++)
-		dec = dec + src[i];
-
-	dec = "0." + dec;
-
-	if (whole == "")
-		whole = "0";
-	if (dec == "0.")
-		dec = "0.0";
-}
-
-string StringDecPartToBit(string decimal)
-{
-	//NOTE: ham doi phan nhi phan sang bit
-	string result; int i = 0;
-	while (decimal != "0.0" && i < 200)
-	{
-		decimal = mul2Float(decimal);
-		if (decimal == "1.0")
-		{
-			result = result + "1";
-			break;
-		}
-		else if (decimal[0] == '1')
-		{
-			result = result + "1";
-			decimal[0] = '0';
-		}
-		else
-			result = result + "0";
-
-		i++;
-	}
-	return result;
-}
-
-bool* StringFloatToBit(string BigFloat)
-{
-	bool* bit = new bool[128];
-	if (BigFloat != "0.0")
-	{
-		string whole, dec;
-		BarFloat(BigFloat, whole, dec);
-		string wholebit = StringIntToBit(whole);
-		string decbit = StringDecPartToBit(dec);
-		string FractionBit = wholebit + decbit;
-		int E = wholebit.size() - 1;
-		for (int i = 0; i < FractionBit.size(); i++)
-		{
-			if (FractionBit[i] == '1')
-			{
-				E = E - i;
-				break;
-			}
-		}
-		while (FractionBit[0] == '0') FractionBit.erase(FractionBit.begin());
-		if (FractionBit[0] == '1') FractionBit.erase(FractionBit.begin());
-		while (FractionBit.size() < 112)
-		{
-			FractionBit = FractionBit + "0";
-		}
-
-		string Expo = to_string(E);
-		string bias = "16383";
-		Expo = add(bias, Expo);
-		string ExpoBit = StringIntToBit(Expo);
-		while (ExpoBit.size() < 15)
-		{
-			ExpoBit = "0" + ExpoBit;
-		}
-
-		if (BigFloat[0] == '-')
-			bit[0] = 1;
-		else
-			bit[0] = 0;
-
-		for (int i = 0; i < 15; i++)
-		{
-			if (ExpoBit[i] == '0')
-				bit[1 + i] = 0;
-			else bit[1 + i] = 1;
-		}
-
-		for (int i = 0; i < 113; i++)
-		{
-			if (FractionBit[i] == '0')
-				bit[16 + i] = 0;
-			else bit[16 + i] = 1;
-		}
-	}
-	else
-	{
-		for (int i = 0; i < 128; i++)
-			bit[i] = 0;
-	}
-
-	return bit;
-}
 
 

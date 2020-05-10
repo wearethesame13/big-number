@@ -1,5 +1,6 @@
 #include "FileProcess.h"
 
+//Xu li ket qua nhan tu file, doi co so va NOT
 string convert(string line)
 {
 	string base1, base2, num;
@@ -46,6 +47,7 @@ string convert(string line)
 
 }
 
+//xu li ket qua tu file: so sanh, tinh toan....
 string operate(string line)
 {
 	string base, num1, num2, op;
@@ -161,32 +163,4 @@ string operate(string line)
 
 	
 	return result;
-}
-// Doc ghi file cua QFloat
-void convertQFloat(string strIn)
-{
-	string p1, p2, strA;
-	stringstream ssIn;
-	ssIn << strIn;
-	ssIn >> p1 >> p2 >> strA;
-	int base1 = stoi(p1);
-	int base2 = stoi(p2);
-    	ofstream outQFloat;
-    	outQFloat.open("QFloat_output.txt",ios::app);
-	QFloat A;	
-    	A.ScanQFloat(strA, base1);
-    	outQFloat << PrintQFloat(A,base2)<<endl;
-    	outQFloat.close();
-}
-void readQFloat()
-{
-    ifstream inQFloat;
-    inQFloat.open("QFloat_input.txt",ios::in);
-    while(!inQFloat.eof())
-    {
-        string strIn;
-        getline(inQFloat,strIn);
-        convertQFloat(strIn);
-    }
-    inQFloat.close(); 
 }

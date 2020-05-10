@@ -33,16 +33,26 @@ public:
 	friend QInt operator/(QInt Q, QInt M);
 };
 
+//Chuyen QInt x thanh day bit 128
 bool* DecToBin(QInt x);
+//Set bit
 void setBitQInt(QInt &x, bool* bit);
+//BinToDec
 QInt BinToDec(bool* bit);
+//Doc so nguyen lon he 10 tu ban phim, luu vao X
 void ScanQInt(QInt& x);
+//Xuat so nguyen lon he 10
 void PrintQInt(QInt x);
 
+//Luu bigInt vao QInt x
 void ScanInt(QInt& x, std::string bigInt);
+//Nhan day bit bat ky, chuyen thanh bool bit[128]
 bool* MakeBit(std::string StrBit);
+//Luu string Bin vao QInt x
 void ScanBin(QInt& x, std::string strBin);
+//Get so he 10
 std::string convertBintoDec(QInt x);
+//Get so he 2 
 std::string convertDectoBin(QInt x);
 
 char* BinToHex(bool* bit); //Chuyển đổi QInt nhị phân sang thập lục phân, bit có độ dài 128
