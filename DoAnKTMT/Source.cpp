@@ -1,6 +1,5 @@
 #include <iostream>
 #include "QInt.h"
-#include "QFloat.h"
 #include <fstream>
 #include "FileProcess.h"
 using namespace std;
