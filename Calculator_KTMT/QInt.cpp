@@ -207,6 +207,7 @@ void comBinToDec(int& x, int a[32])
 	}
 }
 // Định nghĩa toán tử AND "&"
+// Định nghĩa toán tử AND "&"
 QInt operator&(QInt a, QInt b)
 {
 
@@ -292,6 +293,7 @@ QInt operator>>(QInt a, int n)
 		{
 			x[index] = 0;
 		}
+
 	}
 	return BinToDec(x);
 }
@@ -326,7 +328,7 @@ QInt operator<<(QInt a, int n)
 	return BinToDec(x);
 }
 
-// Hàm xoay phải
+// Hàm xoay trái
 QInt QInt::rol(int n)
 {
 	bool* x = DecToBin(*this);
@@ -348,8 +350,7 @@ QInt QInt::rol(int n)
 	return BinToDec(x);
 }
 
-
-// Hàm xoay trái
+// Hàm xoay phải
 QInt QInt::ror(int n)
 {
 	bool* x = DecToBin(*this);

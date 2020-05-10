@@ -74,6 +74,14 @@ namespace CalculatorKTMT {
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::RadioButton^ radioButton1;
 	private: System::Windows::Forms::RadioButton^ radioButton2;
+	private: System::Windows::Forms::Button^ button21;
+	private: System::Windows::Forms::Button^ button22;
+	private: System::Windows::Forms::Button^ button23;
+	private: System::Windows::Forms::Button^ button24;
+	private: System::Windows::Forms::Button^ button25;
+	private: System::Windows::Forms::Button^ button26;
+	private: System::Windows::Forms::Button^ button27;
+	private: System::Windows::Forms::Button^ button28;
 
 	private:
 		/// <summary>
@@ -118,11 +126,19 @@ namespace CalculatorKTMT {
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
+			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->button22 = (gcnew System::Windows::Forms::Button());
+			this->button23 = (gcnew System::Windows::Forms::Button());
+			this->button24 = (gcnew System::Windows::Forms::Button());
+			this->button25 = (gcnew System::Windows::Forms::Button());
+			this->button26 = (gcnew System::Windows::Forms::Button());
+			this->button27 = (gcnew System::Windows::Forms::Button());
+			this->button28 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(45, 324);
+			this->button1->Location = System::Drawing::Point(41, 324);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(55, 37);
 			this->button1->TabIndex = 0;
@@ -132,7 +148,7 @@ namespace CalculatorKTMT {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(45, 367);
+			this->button2->Location = System::Drawing::Point(41, 367);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(55, 37);
 			this->button2->TabIndex = 1;
@@ -142,7 +158,7 @@ namespace CalculatorKTMT {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(45, 410);
+			this->button3->Location = System::Drawing::Point(41, 410);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(55, 37);
 			this->button3->TabIndex = 2;
@@ -152,7 +168,7 @@ namespace CalculatorKTMT {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(45, 453);
+			this->button4->Location = System::Drawing::Point(41, 453);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(55, 37);
 			this->button4->TabIndex = 3;
@@ -272,7 +288,7 @@ namespace CalculatorKTMT {
 			// 
 			// button16
 			// 
-			this->button16->Location = System::Drawing::Point(45, 281);
+			this->button16->Location = System::Drawing::Point(41, 281);
 			this->button16->Name = L"button16";
 			this->button16->Size = System::Drawing::Size(55, 37);
 			this->button16->TabIndex = 15;
@@ -312,7 +328,7 @@ namespace CalculatorKTMT {
 			// 
 			// button20
 			// 
-			this->button20->Location = System::Drawing::Point(45, 281);
+			this->button20->Location = System::Drawing::Point(41, 281);
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(55, 37);
 			this->button20->TabIndex = 19;
@@ -325,7 +341,7 @@ namespace CalculatorKTMT {
 			this->textBox1->Location = System::Drawing::Point(41, 12);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(274, 58);
+			this->textBox1->Size = System::Drawing::Size(364, 58);
 			this->textBox1->TabIndex = 20;
 			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
@@ -370,7 +386,7 @@ namespace CalculatorKTMT {
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
-			this->textBox2->Size = System::Drawing::Size(274, 40);
+			this->textBox2->Size = System::Drawing::Size(364, 40);
 			this->textBox2->TabIndex = 25;
 			this->textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
@@ -380,7 +396,7 @@ namespace CalculatorKTMT {
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->ReadOnly = true;
-			this->textBox3->Size = System::Drawing::Size(274, 41);
+			this->textBox3->Size = System::Drawing::Size(364, 41);
 			this->textBox3->TabIndex = 26;
 			this->textBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
@@ -390,14 +406,14 @@ namespace CalculatorKTMT {
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ReadOnly = true;
-			this->textBox4->Size = System::Drawing::Size(274, 54);
+			this->textBox4->Size = System::Drawing::Size(364, 54);
 			this->textBox4->TabIndex = 27;
 			this->textBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(300, 294);
+			this->radioButton1->Location = System::Drawing::Point(301, 291);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(43, 17);
 			this->radioButton1->TabIndex = 28;
@@ -409,7 +425,7 @@ namespace CalculatorKTMT {
 			// 
 			this->radioButton2->AutoSize = true;
 			this->radioButton2->Checked = true;
-			this->radioButton2->Location = System::Drawing::Point(300, 334);
+			this->radioButton2->Location = System::Drawing::Point(358, 291);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(47, 17);
 			this->radioButton2->TabIndex = 29;
@@ -417,11 +433,99 @@ namespace CalculatorKTMT {
 			this->radioButton2->Text = L"DEC";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			// 
+			// button21
+			// 
+			this->button21->Location = System::Drawing::Point(350, 324);
+			this->button21->Name = L"button21";
+			this->button21->Size = System::Drawing::Size(55, 37);
+			this->button21->TabIndex = 35;
+			this->button21->Text = L"<<";
+			this->button21->UseVisualStyleBackColor = true;
+			this->button21->Click += gcnew System::EventHandler(this, &MyForm::buttonSHL);
+			// 
+			// button22
+			// 
+			this->button22->Location = System::Drawing::Point(350, 367);
+			this->button22->Name = L"button22";
+			this->button22->Size = System::Drawing::Size(55, 37);
+			this->button22->TabIndex = 34;
+			this->button22->Text = L">>";
+			this->button22->UseVisualStyleBackColor = true;
+			this->button22->Click += gcnew System::EventHandler(this, &MyForm::buttonSHR);
+			// 
+			// button23
+			// 
+			this->button23->Location = System::Drawing::Point(289, 453);
+			this->button23->Name = L"button23";
+			this->button23->Size = System::Drawing::Size(55, 37);
+			this->button23->TabIndex = 33;
+			this->button23->Text = L"NOT";
+			this->button23->UseVisualStyleBackColor = true;
+			this->button23->Click += gcnew System::EventHandler(this, &MyForm::buttonNOT);
+			// 
+			// button24
+			// 
+			this->button24->Location = System::Drawing::Point(289, 410);
+			this->button24->Name = L"button24";
+			this->button24->Size = System::Drawing::Size(55, 37);
+			this->button24->TabIndex = 32;
+			this->button24->Text = L"XOR";
+			this->button24->UseVisualStyleBackColor = true;
+			this->button24->Click += gcnew System::EventHandler(this, &MyForm::buttonXOR);
+			// 
+			// button25
+			// 
+			this->button25->Location = System::Drawing::Point(289, 367);
+			this->button25->Name = L"button25";
+			this->button25->Size = System::Drawing::Size(55, 37);
+			this->button25->TabIndex = 31;
+			this->button25->Text = L"OR";
+			this->button25->UseVisualStyleBackColor = true;
+			this->button25->Click += gcnew System::EventHandler(this, &MyForm::buttonOR);
+			// 
+			// button26
+			// 
+			this->button26->Location = System::Drawing::Point(289, 324);
+			this->button26->Name = L"button26";
+			this->button26->Size = System::Drawing::Size(55, 37);
+			this->button26->TabIndex = 30;
+			this->button26->Text = L"AND";
+			this->button26->UseVisualStyleBackColor = true;
+			this->button26->Click += gcnew System::EventHandler(this, &MyForm::buttonAnd);
+			// 
+			// button27
+			// 
+			this->button27->Location = System::Drawing::Point(350, 410);
+			this->button27->Name = L"button27";
+			this->button27->Size = System::Drawing::Size(55, 37);
+			this->button27->TabIndex = 34;
+			this->button27->Text = L"ROL";
+			this->button27->UseVisualStyleBackColor = true;
+			this->button27->Click += gcnew System::EventHandler(this, &MyForm::buttonROL);
+			// 
+			// button28
+			// 
+			this->button28->Location = System::Drawing::Point(350, 453);
+			this->button28->Name = L"button28";
+			this->button28->Size = System::Drawing::Size(55, 37);
+			this->button28->TabIndex = 34;
+			this->button28->Text = L"ROR";
+			this->button28->UseVisualStyleBackColor = true;
+			this->button28->Click += gcnew System::EventHandler(this, &MyForm::buttonROR);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(354, 523);
+			this->ClientSize = System::Drawing::Size(432, 523);
+			this->Controls->Add(this->button21);
+			this->Controls->Add(this->button28);
+			this->Controls->Add(this->button27);
+			this->Controls->Add(this->button22);
+			this->Controls->Add(this->button23);
+			this->Controls->Add(this->button24);
+			this->Controls->Add(this->button25);
+			this->Controls->Add(this->button26);
 			this->Controls->Add(this->radioButton2);
 			this->Controls->Add(this->radioButton1);
 			this->Controls->Add(this->textBox4);
@@ -514,6 +618,7 @@ namespace CalculatorKTMT {
 		void computeDec() {
 			String^ i = textBox1->Text;
 			std::string bigInt; 
+			int n;
 			bool* bin = NULL;
 			char* hex = NULL;
 			QInt add;
@@ -619,6 +724,163 @@ namespace CalculatorKTMT {
 				hex = DecToHex(ans);
 				textBox3->Text = marshal_as<String^>(hex);
 				break;
+			case 5: // PHÉP AND
+				bigInt = marshal_as<string>(i);
+				ScanQInt(add, bigInt);
+				ans = num & add;
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 6: //PHÉP OR
+				bigInt = marshal_as<string>(i);
+				ScanQInt(add, bigInt);
+				ans = num | add;
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 7: //PHÉP XOR
+				bigInt = marshal_as<string>(i);
+				ScanQInt(add, bigInt);
+				ans = num ^ add;
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 8: // PHÉP NOT
+				// Nhập sau khi nhấn phím NOT
+				bigInt = marshal_as<string>(i);
+				ScanQInt(add, bigInt);
+				ans = ~add;
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 9: // PHÉP SHL
+				n = Convert::ToInt32(i);
+				ans = num << n;
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 10: // PHÉP SHR
+				n = Convert::ToInt32(i);
+				ans = num >> n;
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 11: // PHÉP ROL
+				n = Convert::ToInt32(i);
+				ans = num.rol(n);
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
+			case 12: // PHÉP ROR
+				n = Convert::ToInt32(i);
+				ans = num.ror(n);
+				// Xuat Dec
+				textBox1->Text = marshal_as<String^>(PrintQInt(ans));
+				textBox2->Text = marshal_as<String^>(PrintQInt(ans));
+
+				// Xuat Bin
+				textBox4->Text = "";
+				bin = DecToBin(ans);
+				for (int i = 0; i < 128; i++)
+				{
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				// Xuat HEX
+				hex = DecToHex(ans);
+				textBox3->Text = marshal_as<String^>(hex);
+				break;
 			default:
 				break;
 			}
@@ -708,24 +970,7 @@ private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
 	enable();
 }
-private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
-	// event click +
-	// scanf số trước dấu cộng
-	String^ i = textBox1->Text;
-	if (i != "")
-	{
-		std::string bigInt;
-		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
-	}
-	
-	// label1
-	textBox1->Clear();
-	textBox1->Focus();
-	count = 1; // ứng với phép cộng
-	label1->Text = marshal_as<String^>(PrintQInt(num)) + "+";
 
-}
 private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	if (radioButton2->Checked)
@@ -759,6 +1004,7 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 	textBox2->Text = "";
 	textBox3->Text = "";
 	textBox4->Text = "";
+	count = 0;
 	for (int i = 0; i < 4; i++)
 	{
 		num.data[i] = 0;
@@ -808,6 +1054,23 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 		button19->Enabled = true;
 	}
 }
+private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
+	// event click +
+	// scanf số trước dấu cộng
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 1; // ứng với phép cộng
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " + ";
+}
 private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
 	// event click -
 	// scanf số trước dấu trừ
@@ -823,7 +1086,7 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	textBox1->Clear();
 	textBox1->Focus();
 	count = 2; // 2 ứng với phép trừ
-	label1->Text = marshal_as<String^>(PrintQInt(num)) + "-";
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " - ";
 }
 private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
 	// event click *
@@ -840,7 +1103,7 @@ private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ 
 	textBox1->Clear();
 	textBox1->Focus();
 	count = 3; // 2 ứng với phép nhân
-	label1->Text = marshal_as<String^>(PrintQInt(num)) + "*";
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " * ";
 }
 private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
 	// event click /
@@ -857,7 +1120,135 @@ private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ 
 	textBox1->Clear();
 	textBox1->Focus();
 	count = 4; // 2 ứng với phép chia
-	label1->Text = marshal_as<String^>(PrintQInt(num)) + "/";
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " / ";
+}
+private: System::Void buttonAnd(System::Object^ sender, System::EventArgs^ e) {
+	// event click AND
+	// scanf số trước dấu AND
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 5; // 5 ứng với phép AND
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " && ";
+}
+
+private: System::Void buttonOR(System::Object^ sender, System::EventArgs^ e) {
+	// event click OR
+	// scanf số trước dấu OR
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 6; // 6 ứng với phép OR
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " | ";
+}
+private: System::Void buttonXOR(System::Object^ sender, System::EventArgs^ e) {
+	// event click XOR
+	// scanf số trước dấu XOR
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 7; // 7 ứng với phép XOR
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " ^ ";
+}
+private: System::Void buttonNOT(System::Object^ sender, System::EventArgs^ e) {
+	// event click NOT
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 8;  // 8 ứng với phép NOT
+	label1->Text = " ~ ";
+}
+private: System::Void buttonSHL(System::Object^ sender, System::EventArgs^ e) {
+	// event click SHL
+	// scanf số trước dấu SHL
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 9; // 9 ứng với phép SHL
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " << ";
+}
+private: System::Void buttonSHR(System::Object^ sender, System::EventArgs^ e) {
+	// event click SHR
+	// scanf số trước dấu SHR
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 10; // 10 ứng với phép SHR
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " >> ";
+}
+private: System::Void buttonROL(System::Object^ sender, System::EventArgs^ e) {
+	// event click ROL
+	// scanf số trước dấu ROL
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 11; // 11 ứng với phép ROL
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " ROL ";
+}
+private: System::Void buttonROR(System::Object^ sender, System::EventArgs^ e) {
+	// event click ROR
+	// scanf số trước dấu ROR
+	String^ i = textBox1->Text;
+	if (i != "")
+	{
+		std::string bigInt;
+		bigInt = marshal_as<std::string>(i);
+		ScanQInt(num, bigInt);
+	}
+
+	// label1
+	textBox1->Clear();
+	textBox1->Focus();
+	count = 12; // 12 ứng với phép ROR
+	label1->Text = marshal_as<String^>(PrintQInt(num)) + " ROR ";
 }
 };
 }
