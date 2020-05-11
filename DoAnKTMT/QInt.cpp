@@ -486,7 +486,7 @@ QInt operator>>(QInt a, int n)
 	
 	if (x[0] == 0)
 	{
-		for (int index = n; index < 128; index++)
+		for (int index = 127; index >=n; index--)
 		{
 			x[index] = x[index-n];
 		}
@@ -497,7 +497,7 @@ QInt operator>>(QInt a, int n)
 	}
 	if (x[0] == 1)
 	{
-		for (int index = n + 1; index < 128; index++)
+		for (int index = 127; index >n ; index--)
 		{
 			x[index] = x[index - n];
 		}
@@ -571,7 +571,7 @@ QInt QInt::ror( int n)
 	{
 		a[index] = x[index];
 	}
-	for (int index = n; index < 128; index++)
+	for (int index = 127; index >=n; index--)
 	{
 		x[index] = x[index - n];
 	}
