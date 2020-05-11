@@ -420,6 +420,7 @@ namespace CalculatorKTMT {
 			this->textBox2->Size = System::Drawing::Size(364, 40);
 			this->textBox2->TabIndex = 25;
 			this->textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->textBox2->Enabled = false;
 			// 
 			// textBox3
 			// 
@@ -430,6 +431,7 @@ namespace CalculatorKTMT {
 			this->textBox3->Size = System::Drawing::Size(364, 41);
 			this->textBox3->TabIndex = 26;
 			this->textBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->textBox3->Enabled = false;
 			// 
 			// textBox4
 			// 
@@ -440,6 +442,7 @@ namespace CalculatorKTMT {
 			this->textBox4->Size = System::Drawing::Size(364, 54);
 			this->textBox4->TabIndex = 27;
 			this->textBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->textBox4->Enabled = false;
 			// 
 			// radioButton1
 			// 
@@ -744,7 +747,6 @@ namespace CalculatorKTMT {
 		void disableQFloat()
 		{
 			button8->Enabled = true;
-			textBox3->Enabled = false;
 			button13->Enabled = false;
 			button14->Enabled = false;
 			button16->Enabled = true;
@@ -763,7 +765,6 @@ namespace CalculatorKTMT {
 		void enableQFloat()
 		{
 			button8->Enabled = false;
-			textBox3->Enabled = true;
 			button13->Enabled = true;
 			button14->Enabled = true;
 			button16->Enabled = true;
@@ -1256,6 +1257,16 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
 	// off btn
+	textBox1->Text = "";
+	textBox2->Text = "";
+	textBox3->Text = "";
+	textBox4->Text = "";
+	label1->Text = "";
+	count = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		num.data[i] = 0;
+	}
 	disable();
 }
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1277,21 +1288,21 @@ private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ 
 			button10->Enabled = false;
 			button11->Enabled = false;
 			button12->Enabled = true;
-			button13->Enabled = true;
-			button14->Enabled = true;
-			button15->Enabled = true;
+			button13->Enabled = false;
+			button14->Enabled = false;
+			button15->Enabled = false;
 			button16->Enabled = false;
 			button17->Enabled = true;
 			button18->Enabled = true;
-			button19->Enabled = true;
-			button21->Enabled = true;
-			button22->Enabled = true;
-			button23->Enabled = true;
-			button24->Enabled = true;
-			button25->Enabled = true;
-			button26->Enabled = true;
-			button27->Enabled = true;
-			button28->Enabled = true;
+			button19->Enabled = false;
+			button21->Enabled = false;
+			button22->Enabled = false;
+			button23->Enabled = false;
+			button24->Enabled = false;
+			button25->Enabled = false;
+			button26->Enabled = false;
+			button27->Enabled = false;
+			button28->Enabled = false;
 			buttonFile->Enabled = true;
 			buttonChangeMode->Enabled = true;
 			textBox5->Enabled = true;
@@ -1445,20 +1456,20 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 			button10->Enabled = false;
 			button11->Enabled = false;
 			button12->Enabled = true;
-			button13->Enabled = true;
-			button14->Enabled =	true;
-			button15->Enabled = true;
+			button13->Enabled = false;
+			button14->Enabled =	false;
+			button15->Enabled = false;
 			button16->Enabled = false;
 			button18->Enabled = true;
-			button19->Enabled = true;
-			button21->Enabled = true;
-			button22->Enabled = true;
-			button23->Enabled = true;
-			button24->Enabled = true;
-			button25->Enabled = true;
-			button26->Enabled = true;
-			button27->Enabled = true;
-			button28->Enabled = true;
+			button19->Enabled = false;
+			button21->Enabled = false;
+			button22->Enabled = false;
+			button23->Enabled = false;
+			button24->Enabled = false;
+			button25->Enabled = false;
+			button26->Enabled = false;
+			button27->Enabled = false;
+			button28->Enabled = false;
 		}
 		if (radioButton2->Checked)
 		{
@@ -1516,8 +1527,6 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 		if (radioButton2->Checked)
 		{
 			textBox1->Enabled = true;
-			textBox2->Enabled = true;
-			textBox3->Enabled = true;
 			button1->Enabled = true;
 			button2->Enabled = true;
 			button3->Enabled = true;
@@ -1782,14 +1791,29 @@ private: System::Void buttonChangeMode_Click(System::Object^ sender, System::Eve
 		numMode = 1;
 		mode->Text = "";
 		mode->Text = "QFLOAT";
-		disableQFloat();
+		disableQFloat(); // Tắt các nút không cho QFloat
 	}
 	else
 	{
 		numMode = 0;
 		mode->Text = "";
-		mode->Text = "QINT";
-		enableQFloat();
+		mode->Text = "QINT"; 
+		enableQFloat(); // Mở lại nút cho QInt
+		if (radioButton1->Checked == true)
+		{
+			button13->Enabled = false;
+			button14->Enabled = false;
+			button15->Enabled = false;
+			button19->Enabled = false;
+			button21->Enabled = false;
+			button22->Enabled = false;
+			button23->Enabled = false;
+			button24->Enabled = false;
+			button25->Enabled = false;
+			button26->Enabled = false;
+			button27->Enabled = false;
+			button28->Enabled = false;
+		}
 	}
 	count = 0;
 }

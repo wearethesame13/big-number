@@ -1,4 +1,4 @@
 ﻿  MyForm.cpp
-F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\MyForm.h(1150,8): warning C4101: 'n': unreferenced local variable
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\MyForm.h(1151,8): warning C4101: 'n': unreferenced local variable
   BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Calculator_KTMT.vcxproj -> F:\KTMT&HN\Đồ án 1\KTMTHN\x64\Debug\Calculator_KTMT.exe
