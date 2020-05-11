@@ -150,7 +150,7 @@ string GetFloat(Qfloat x)
 				//In giá trị
 				//if (sign) cout << '-'; //Kiểm tra số âm.
 				//cout << value << "x2^" << Vexp << endl; //Xuất ra dạng x.xxxx*2^x
-				if (sign == 1) cout << '-';
+				//if (sign == 1) cout << '-';
 				// làm tròn
 				bool iszero = true;
 				for (int i = 0; i < value.m_float.length(); i++)
@@ -171,7 +171,10 @@ string GetFloat(Qfloat x)
 						break;
 					}
 				}
-				return value.m_float;
+				if (sign == 1)
+					return "-" + value.m_float;
+				else
+					return value.m_float;
 			}
 		}
 	}
@@ -227,25 +230,4 @@ void ScanBin(Qfloat& x, string StrBin)
 	bit = MakeBit(StrBin);
 	setBitQfloat(x, bit);
 }
-
-bool* MakeBit(string StrBit)
-{
-	bool bit[128] = { false };
-	int tempSize = StrBit.size();
-	int j = tempSize - 1;
-	for (int i = 127; i >= 0; i--)
-	{
-		if (j >= 0)
-		{
-			if (StrBit[j] == '0')
-				bit[i] = 0;
-			else
-				bit[i] = 1;
-			j--;
-		}
-		else break;
-	}
-	return bit;
-}
-
 

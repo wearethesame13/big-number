@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <string.h>
+#include "BigNumber.h"
 using namespace std;
 
 // TẠO KIỂU DỮ LIỆU MỚI ĐỂ XUẤT CHUỖI 
@@ -31,8 +32,7 @@ void BarFloat(string src, string& whole, string& dec);
 bool* StringFloatToBit(string BigFloat);
 string StringIntToBit(string x);
 string StringDecPartToBit(string decimal);
-string add(string numA, string numB);
-string div2(string obj);
 
-void TwoCompliment(string& StrBit);
+
+
 string mul2Float(string BFloat);

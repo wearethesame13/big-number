@@ -1,24 +1,11 @@
 ﻿#include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include "Qfloat.h"
 #include "FileProces.h"
 using namespace std;
 
 
-int main(int argc, char* args[])
+int main()
 {
-	std::fstream fin, fout;
-	fin.open(args[1], std::ios::in);
-	fout.open(args[2], std::ios::out);
-	std::string line, output;
-	while (!fin.eof()) {
-		getline(fin, line);
-		output = convert(line);
-		fout << output << endl;
-	}
-	fin.close();
-	fout.close();
+	WorkWithFileQfloat("QFloat_input.txt");
 
 	cout << "====================================" << endl;
 	cout << "=   BIEU DIEN VA TINH TOAN SO HOC  =" << endl;
