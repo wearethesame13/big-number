@@ -2,8 +2,8 @@
 #include <vector>
 #include <string>
 #include <iostream>
+using namespace std; 
 
-using namespace std;
 string div2(string obj);
 void TwoCompliment(string& StrBit);
 void DeTwoCompliment(bool* bit);
@@ -17,4 +17,4 @@ string mul2Float(string BFloat);
 string StringDecPartToBit(string decimal);
 bool* StringFloatToBit(string BigFloat);
 void BarFloat(string src, string& whole, string& dec);
-
+bool* MakeBit(string StrBit);

@@ -43,10 +43,29 @@ string PrintQInt(QInt x);
 char* BinToHex(bool* bit); //Chuyển đổi QInt nhị phân sang thập lục phân, bit có độ dài 128
 char GroupBinToHex(bool* bit); //Chuyển dãy 4 bit thành kí tự Hex, bit có độ dài 4
 char HexIndex(int index);
+int rHexIndex(char hex);
 char* DecToHex(QInt x); //Chuyển đổi QInt thập phân sang thập lục phân
 bool getBitInt(int value, int pos); //Lấy bit tại vị trí pos từ trái sang
 char* vectorToStr(std::vector<char> x); //Chuyển đổi vector char về chuỗi
-// And , Or, Xor, Not
+bool* HexToBin1(std::string x);
+QInt HexToDec(std::string x);
 
 void layBu2(bool* bit);
 bool* xuLyChuoiBit(std::string bo);
+
+//Luu bigInt vao QInt x
+void ScanInt(QInt& x, std::string bigInt);
+//Nhan day bit bat ky, chuyen thanh bool bit[128]
+bool* MakeBit(std::string StrBit);
+//Luu string Bin vao QInt x
+void ScanBin(QInt& x, std::string strBin);
+//Get so he 10
+std::string convertBintoDec(QInt x);
+//Get so he 2 
+std::string convertDectoBin(QInt x);
+
+QInt HexToDec(std::string x);
+std::string HexToBin(std::string Hex);
+std::string ReverseHexIndex(char i);
+void ScanHex(QInt& x, std::string Hex);
+

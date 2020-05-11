@@ -66,8 +66,8 @@ void DeTwoCompliment(bool* bit)
 
 }
 
-string StringIntToBit(string x) {
-
+string StringIntToBit(string x)
+{
 	bool negative = false;
 	if (x[0] == '-')
 	{
@@ -160,7 +160,11 @@ string add(string numA, string numB)
 		{
 			tempA = (int)numA[i] - '0';
 			tempB = (int)numB[i] - '0';
-
+			// ?
+			if (tempA < (tempB + rem))
+			{
+				tempA = tempA + 10;
+			}
 			currResult = tempA - tempB - rem;
 			rem = currResult / 10;
 			currResult = currResult % 10;

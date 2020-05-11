@@ -274,7 +274,7 @@ QInt operator>>(QInt a, int n)
 
 	if (x[0] == 0)
 	{
-		for (int index = n; index < 128; index++)
+		for (int index = 127; index >= n; index--)
 		{
 			x[index] = x[index - n];
 		}
@@ -285,7 +285,7 @@ QInt operator>>(QInt a, int n)
 	}
 	if (x[0] == 1)
 	{
-		for (int index = n + 1; index < 128; index++)
+		for (int index = 127; index > n; index--)
 		{
 			x[index] = x[index - n];
 		}
@@ -359,7 +359,7 @@ QInt QInt::ror(int n)
 	{
 		a[index] = x[index];
 	}
-	for (int index = n; index < 128; index++)
+	for (int index = 127; index >= n; index--)
 	{
 		x[index] = x[index - n];
 	}
@@ -685,4 +685,229 @@ QInt operator/(QInt Q, QInt M)
 	{
 		return num_zero - Q;
 	}
+}
+void ScanInt(QInt& x, string bigInt)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+	bool* bit = NULL;
+	bit = InsertPreBit(bigInt, StringIntToBit(bigInt));
+	setBitQInt(x, bit);
+	delete[] bit;
+}
+
+bool* MakeBit(string StrBit)
+{
+	bool bit[128] = { false };
+	int tempSize = StrBit.size();
+	int j = tempSize - 1;
+	for (int i = 127; i >= 0; i--)
+	{
+		if (j >= 0)
+		{
+			if (StrBit[j] == '0')
+				bit[i] = 0;
+			else
+				bit[i] = 1;
+			j--;
+		}
+		else break;
+	}
+	return bit;
+}
+
+void ScanBin(QInt& x, string strBin)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		x.data[i] = 0;
+	}
+	bool* bit = NULL;
+	bit = MakeBit(strBin);
+	setBitQInt(x, bit);
+}
+
+string convertBintoDec(QInt x)
+{
+	bool* bit = DecToBin(x);
+	std::string num;
+	num = StrBitToInt(bit);
+	return num;
+}
+string convertDectoBin(QInt x)
+{
+	bool* bit = DecToBin(x);
+	std::string num;
+	string result = "";
+	bool flag = false;
+	for (int i = 0; i < 128; i++)
+	{
+		if (bit[i] == 1)
+			result = result + "1";
+		else
+			result = result + "0";
+	}
+	while (result[0] == '0') result.erase(result.begin());
+	if (result == "") result = "0";
+	return result;
+}
+bool* HexToBin1(std::string x)
+{
+	while (x.length() < 32)
+	{
+		x = '0' + x;
+	}
+	bool* tmp = new bool[4];
+	bool* kq = new bool[128];
+	for (int i = 0; i < x.length(); i++)
+	{
+		int s = rHexIndex(x[i]);
+		for (int j = 3; j >= 0; j--)
+		{
+			tmp[j] = s % 2;
+			s /= 2;
+		}
+		for (int k = 0; k < 4; k++)
+		{
+			kq[k + i * 4] = tmp[k];
+		}
+	}
+	delete[]tmp;
+	return kq;
+}
+
+QInt HexToDec(std::string x)
+{
+	bool* bin = HexToBin1(x);
+	QInt kq = BinToDec(bin);
+	delete[]bin;
+	return kq;
+}
+int rHexIndex(char hex)
+{
+	switch (hex)
+	{
+	case '0':
+		return 0;
+		break;
+	case '1':
+		return 1;
+		break;
+	case '2':
+		return 2;
+		break;
+	case '3':
+		return 3;
+		break;
+	case '4':
+		return 4;
+		break;
+	case '5':
+		return 5;
+		break;
+	case '6':
+		return 6;
+		break;
+	case '7':
+		return 7;
+		break;
+	case '8':
+		return 8;
+		break;
+	case '9':
+		return 9;
+		break;
+	case 'A':
+		return 10;
+		break;
+	case 'B':
+		return 11;
+		break;
+	case 'C':
+		return 12;
+		break;
+	case 'D':
+		return 13;
+		break;
+	case 'E':
+		return 14;
+		break;
+	case 'F':
+		return 15;
+		break;
+	default:
+		return NULL;
+		break;
+	}
+}
+std::string HexToBin(std::string Hex)
+{
+	string result;
+	for (int i = 0; i < Hex.size(); i++)
+		result = result + ReverseHexIndex(Hex[i]);
+	return result;
+}
+std::string ReverseHexIndex(char i)
+{
+	switch (i)
+	{
+	case '0':
+		return "0000";
+		break;
+	case '1':
+		return "0001";
+		break;
+	case '2':
+		return "0010";
+		break;
+	case '3':
+		return "0011";
+		break;
+	case '4':
+		return "0100";
+		break;
+	case '5':
+		return "0101";
+		break;
+	case '6':
+		return "0110";
+		break;
+	case '7':
+		return "0111";
+		break;
+	case '8':
+		return "1000";
+		break;
+	case '9':
+		return "1001";
+		break;
+	case 'A':
+		return "1010";
+		break;
+	case 'B':
+		return "1011";
+		break;
+	case 'C':
+		return "1100";
+		break;
+	case 'D':
+		return "1101";
+		break;
+	case 'E':
+		return "1110";
+		break;
+	case 'F':
+		return "1111";
+		break;
+	default:
+		return NULL;
+		break;
+	}
+}
+void ScanHex(QInt& x, std::string Hex)
+{
+	string bin = HexToBin(Hex);
+	ScanBin(x, bin);
 }
