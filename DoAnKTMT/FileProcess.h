@@ -7,5 +7,4 @@
 using namespace std;
 string convert(string line);
 string operate(string line);
-void convertQFloat(string strIn);
-void readQFloat();
+
