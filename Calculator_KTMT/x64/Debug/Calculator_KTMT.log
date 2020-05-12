@@ -1,4 +1,8 @@
-﻿  MyForm.cpp
-F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\MyForm.h(1151,8): warning C4101: 'n': unreferenced local variable
+﻿  QInt.cpp
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\QInt.cpp(79,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\QInt.cpp(206,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\QInt.cpp(704,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\QInt.cpp(688): warning C4715: 'operator/': not all control paths return a value
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\QInt.cpp(718): warning C4172: returning address of local variable or temporary: bit
   BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Calculator_KTMT.vcxproj -> F:\KTMT&HN\Đồ án 1\KTMTHN\x64\Debug\Calculator_KTMT.exe
