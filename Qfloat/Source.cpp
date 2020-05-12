@@ -3,9 +3,9 @@
 using namespace std;
 
 
-int main()
+int main(int argc, char* args[])
 {
-	WorkWithFileQfloat("QFloat_input.txt");
+	WorkWithFile(args[1], args[2], args[3]);
 
 	cout << "====================================" << endl;
 	cout << "=   BIEU DIEN VA TINH TOAN SO HOC  =" << endl;
