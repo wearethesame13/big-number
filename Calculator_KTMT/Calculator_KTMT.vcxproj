@@ -92,8 +92,10 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <EntryPointSymbol>Main</EntryPointSymbol>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>
+      </SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,6 +129,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Qfloat.cpp" />
     <ClCompile Include="QInt.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="StrFloat.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -586,10 +586,6 @@ QInt operator*(QInt M, QInt Q)
 	}
 	bool* bitA = DecToBin(A);
 	bool* bitQ = DecToBin(Q);
-	if (A == num_zero)
-	{
-		cout << "Xay ra hien tuong tran so!!! Ket qua khong the bieu dien duoi dang QInt" << endl;
-	}
 	for (int i = 0; i < 128; i++)
 	{
 		result[i] = bitQ[i];

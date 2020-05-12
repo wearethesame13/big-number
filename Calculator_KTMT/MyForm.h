@@ -14,18 +14,21 @@ namespace CalculatorKTMT {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 	int numMode = 0; // 0 là QInt, 1 là QFloat 
 	Qfloat numFloat;
 	QInt num;
 	QInt ans;
 	int count = 0;
+	
+	
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		MyForm()
 		{
 			InitializeComponent();
 			//
@@ -1017,9 +1020,6 @@ namespace CalculatorKTMT {
 				hex = DecToHex(ans);
 				textBox3->Text = marshal_as<String^>(hex);
 				break;
-			case 8: // PHÉP NOT
-				
-				break;
 			case 9: // PHÉP SHL
 				n = Convert::ToInt32(i);
 				ans = num << n;
@@ -1148,7 +1148,6 @@ namespace CalculatorKTMT {
 		{
 			String^ i = textBox1->Text;
 			std::string bigFloat;
-			int n;
 			bool* bin = NULL;
 			char* hex = NULL;
 			Qfloat add;
@@ -1819,3 +1818,4 @@ private: System::Void buttonChangeMode_Click(System::Object^ sender, System::Eve
 }
 };
 }
+

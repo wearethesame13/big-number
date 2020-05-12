@@ -1,11 +1,11 @@
 #include "FileProces.h"
 #include "Qfloat.h"
 
-bool WorkWithFileQInt(string filename)
+bool WorkWithFileQInt(string filename, string fileout)
 {
 	std::fstream fin, fout;
 	fin.open(filename, std::ios::in);
-	fout.open("QInt_output.txt", std::ios::out);
+	fout.open(fileout, std::ios::out);
 	if (!fin)
 	{
 		cout << "No " << filename << " available" << endl;
@@ -30,11 +30,11 @@ bool WorkWithFileQInt(string filename)
 	return true;
 }
 
-bool WorkWithFileQfloat(string filename)
+bool WorkWithFileQfloat(string filename, string fileout)
 {
 	std::fstream fin, fout;
 	fin.open(filename, std::ios::in);
-	fout.open("QFloat_output.txt", std::ios::out);
+	fout.open(fileout, std::ios::out);
 	if (!fin)
 	{
 		cout << "No " << filename << " available" << endl;

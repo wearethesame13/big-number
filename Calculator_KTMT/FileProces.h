@@ -4,8 +4,8 @@
 #include"QFloat.h"
 
 #include "QInt.h"
-bool WorkWithFileQInt(string filename);
-bool WorkWithFileQfloat(string filename);
+bool WorkWithFileQfloat(string filename, string fileout = "output.txt");
+bool WorkWithFileQInt(string filename, string fileout = "output.txt");
 string convertLineQFloat(string line);
 string convertLineQInt(string line);
 string operateLineQInt(string line);

@@ -15,13 +15,13 @@ Qfloat::~Qfloat()
 
 void Qfloat::setBit(int pos, bool x)
 {
-	data[pos / 32] = (x << 31 - pos % 32) | data[pos / 32];
+	data[pos / 32] = (x << (31 - pos % 32)) | data[pos / 32];
 }
 
 bool Qfloat::getBit(int pos)
 {
 	bool a = 0;
-	a = (data[pos / 32] >> 31 - pos % 32) & 1;
+	a = (data[pos / 32] >> (31 - pos % 32)) & 1;
 	return a;
 }
 
@@ -74,7 +74,7 @@ void setBitQfloat(Qfloat& x, bool* bit)
 {
 	for (int i = 0; i < 128; i++)
 	{
-		x.data[i / 32] = (bit[i] << 31 - i % 32) | x.data[i / 32];
+		x.data[i / 32] = (bit[i] << (31 - i % 32)) | x.data[i / 32];
 	}
 }
 
@@ -83,7 +83,7 @@ void setBitExponent(int& intExp, bool* bit)
 	intExp = 0;
 	for (int i = 0; i < 15; i++)
 	{
-		intExp = (bit[i] << 14 - i) | intExp;
+		intExp = (bit[i] << (14 - i)) | intExp;
 	}
 }
 

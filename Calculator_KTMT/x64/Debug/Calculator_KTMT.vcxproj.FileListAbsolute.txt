@@ -1,6 +1,6 @@
 D:\source calculator\big-number\Calculator_KTMT\x64\Debug\Calculator_KTMT.vcxprojAssemblyReference.cache
 D:\source calculator\big-number\Calculator_KTMT\x64\Debug\CalculatorKTMT.MyForm.resources
 D:\source calculator\big-number\Calculator_KTMT\x64\Debug\Calculator_KTMT.vcxproj.GenerateResource.cache
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\x64\Debug\Calculator_KTMT.vcxprojAssemblyReference.cache
 F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\x64\Debug\CalculatorKTMT.MyForm.resources
 F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\x64\Debug\Calculator_KTMT.vcxproj.GenerateResource.cache
-F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\x64\Debug\Calculator_KTMT.vcxprojAssemblyReference.cache
