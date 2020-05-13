@@ -155,6 +155,7 @@ string add(string numA, string numB)
 	while (numA.size() < numB.size()) numA = '0' + numA;
 	int tempA, tempB, currResult;
 	int rem = 0;
+	bool flagrem = false;
 	string result;
 	if (negative)
 	{
@@ -162,13 +163,12 @@ string add(string numA, string numB)
 		{
 			tempA = (int)numA[i] - '0';
 			tempB = (int)numB[i] - '0';
-			// ?
 			if (tempA < (tempB + rem))
 			{
 				tempA = tempA + 10;
 			}
 			currResult = tempA - tempB - rem;
-			rem = currResult / 10;
+			rem = tempA / 10;
 			currResult = currResult % 10;
 			result = (char)(currResult + '0') + result;
 		}
