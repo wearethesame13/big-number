@@ -416,6 +416,7 @@ namespace CalculatorKTMT {
 			// 
 			// textBox2
 			// 
+			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(44, 102);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
@@ -423,10 +424,10 @@ namespace CalculatorKTMT {
 			this->textBox2->Size = System::Drawing::Size(364, 40);
 			this->textBox2->TabIndex = 25;
 			this->textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-			this->textBox2->Enabled = false;
 			// 
 			// textBox3
 			// 
+			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(44, 163);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
@@ -434,10 +435,10 @@ namespace CalculatorKTMT {
 			this->textBox3->Size = System::Drawing::Size(364, 41);
 			this->textBox3->TabIndex = 26;
 			this->textBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-			this->textBox3->Enabled = false;
 			// 
 			// textBox4
 			// 
+			this->textBox4->Enabled = false;
 			this->textBox4->Location = System::Drawing::Point(44, 217);
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
@@ -445,7 +446,6 @@ namespace CalculatorKTMT {
 			this->textBox4->Size = System::Drawing::Size(364, 54);
 			this->textBox4->TabIndex = 27;
 			this->textBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-			this->textBox4->Enabled = false;
 			// 
 			// radioButton1
 			// 
@@ -456,7 +456,6 @@ namespace CalculatorKTMT {
 			this->radioButton1->TabIndex = 28;
 			this->radioButton1->Text = L"BIN";
 			this->radioButton1->UseVisualStyleBackColor = true;
-			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::radioButton1_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -1184,17 +1183,32 @@ namespace CalculatorKTMT {
 		{
 			String^ t = textBox1->Text;
 			std::string bigFloat = marshal_as<string>(t);
-			ScanBin(numFloat, bigFloat);
+			//ScanBin(numFloat, bigFloat);
 			int temp = (int)(128 - bigFloat.length());
 			for (int i = 0; i < temp; i++)
 			{
 				bigFloat = "0" + bigFloat;
 			}
+			bool* bin = new bool[128];
 			switch (count)
 			{
 			case 0:
 				// Xuất số nhị phân
-				textBox4->Text = marshal_as<String^>(bigFloat);
+				for (int i = 0; i < 128; i++)
+				{
+					if (bigFloat[i] == '1')
+					{
+						bin[i] = true;
+					}
+					else
+					{
+						bin[i] = false;
+					}
+					textBox4->Text += ((int)bin[i]).ToString();
+				}
+
+				numFloat = BinToDecimal(bin);
+				//textBox4->Text = marshal_as<String^>(bigFloat);
 
 				// Xuất số thập phân
 				textBox2->Text = marshal_as<String^>(GetFloat(numFloat));

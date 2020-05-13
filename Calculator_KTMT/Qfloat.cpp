@@ -8,6 +8,16 @@ Qfloat::Qfloat()
 	}
 }
 
+Qfloat BinToDecimal(bool* bit)
+{
+	Qfloat Dec;
+	for (int i = 0; i < 128; i++)
+	{
+		Dec.data[i / 32] = (bit[i] << (31 - i % 32)) | Dec.data[i / 32];
+	}
+	return Dec;
+}
+
 Qfloat::~Qfloat()
 {
 

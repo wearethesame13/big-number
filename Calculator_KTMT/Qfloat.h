@@ -21,3 +21,4 @@ string GetBin(Qfloat x);
 void ScanQFloat(Qfloat& x);
 void ScanQfloat(Qfloat& x, string num);
 void ScanBin(Qfloat& x, string StrBin);
+Qfloat BinToDecimal(bool* bit);
