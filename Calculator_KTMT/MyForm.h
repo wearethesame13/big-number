@@ -1553,7 +1553,7 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1570,7 +1570,7 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1587,7 +1587,7 @@ private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1604,7 +1604,7 @@ private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1621,7 +1621,7 @@ private: System::Void buttonAnd(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1639,7 +1639,7 @@ private: System::Void buttonOR(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1656,7 +1656,7 @@ private: System::Void buttonXOR(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1674,7 +1674,7 @@ private: System::Void buttonNOT(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 	ans = ~num;
 	// Xuat Dec
@@ -1701,7 +1701,7 @@ private: System::Void buttonSHL(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1718,7 +1718,7 @@ private: System::Void buttonSHR(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1735,7 +1735,7 @@ private: System::Void buttonROL(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
@@ -1752,7 +1752,7 @@ private: System::Void buttonROR(System::Object^ sender, System::EventArgs^ e) {
 	{
 		std::string bigInt;
 		bigInt = marshal_as<std::string>(i);
-		ScanQInt(num, bigInt);
+		ScanInt(num, bigInt);
 	}
 
 	// label1
