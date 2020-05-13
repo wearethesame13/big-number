@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿  QInt.cpp
 C:\Users\anpha\projects\big-number\Calculator_KTMT\QInt.cpp(79,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 C:\Users\anpha\projects\big-number\Calculator_KTMT\QInt.cpp(206,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 C:\Users\anpha\projects\big-number\Calculator_KTMT\QInt.cpp(679): warning C4715: 'operator/': not all control paths return a value
   BigNumber.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Calculator_KTMT.vcxproj -> C:\Users\anpha\projects\big-number\x64\Debug\Calculator_KTMT.exe
+=======
+﻿  Calculator_KTMT.vcxproj -> D:\source calculator\big-number\x64\Debug\Calculator_KTMT.exe
+>>>>>>> 41f0c854fd7fed636033623d1174a70e052e1ccd
