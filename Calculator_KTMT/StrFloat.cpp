@@ -216,7 +216,7 @@ StrFloat StrFloat::operator/=(int p)
 StrFloat StrFloat::operator+=(const StrFloat& p)
 {
 	//(*this) = (*this) + p;
-	return (*this)+p;
+	return (*this) + p;
 }
 
 //Tăng lên 1 đơn vị ở phần nguyên.
@@ -244,7 +244,7 @@ ostream& operator<<(ostream& os, const StrFloat& p)
 	return os;
 }
 
-void BarFloatQFloat(string src, string& whole, string& dec)
+void BarFloat(string src, string& whole, string& dec)
 {
 	whole = "";
 	dec = "";
@@ -268,15 +268,15 @@ void BarFloatQFloat(string src, string& whole, string& dec)
 		dec = "0.0";
 }
 
-bool* StringFloatToBitQFloat(string BigFloat)
+bool* StringFloatToBit(string BigFloat)
 {
 	bool* bit = new bool[128];
 	if (BigFloat != "0.0")
 	{
 		string whole, dec;
-		BarFloatQFloat(BigFloat, whole, dec);
+		BarFloat(BigFloat, whole, dec);
 		string wholebit = StringIntToBit(whole);
-		string decbit = StringDecPartToBitQFloat(dec);
+		string decbit = StringDecPartToBit(dec);
 		string FractionBit = wholebit + decbit;
 		int E = wholebit.size() - 1;
 		for (int i = 0; i < FractionBit.size(); i++)
@@ -334,7 +334,7 @@ bool* StringFloatToBitQFloat(string BigFloat)
 
 
 
-string StringDecPartToBitQFloat(string decimal)
+string StringDecPartToBit(string decimal)
 {
 	//NOTE: ham doi phan nhi phan sang bit
 	string result; int i = 0;
@@ -362,7 +362,7 @@ string StringDecPartToBitQFloat(string decimal)
 
 
 
-string mul2FloatQFloat(string BFloat)
+string mul2Float(string BFloat)
 {
 	//Chi nhan cho so duong va nho hon 1
 

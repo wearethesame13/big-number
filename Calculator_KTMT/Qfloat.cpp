@@ -224,8 +224,8 @@ void ScanQFloat(Qfloat& x)
 	cout << "Nhap so thuc: ";
 	string BigFloat;
 	cin >> BigFloat;
-	
-	bool* bit = StringFloatToBitQFloat(BigFloat);
+
+	bool* bit = StringFloatToBit(BigFloat);
 
 	setBitQfloat(x, bit);
 }
@@ -237,7 +237,7 @@ void ScanQfloat(Qfloat& x, string num)
 		x.data[i] = 0;
 	}
 
-	bool* bit = StringFloatToBitQFloat(num);
+	bool* bit = StringFloatToBit(num);
 
 	setBitQfloat(x, bit);
 }

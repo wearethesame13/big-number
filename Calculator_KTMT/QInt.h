@@ -55,8 +55,6 @@ bool* xuLyChuoiBit(std::string bo);
 
 //Luu bigInt vao QInt x
 void ScanInt(QInt& x, std::string bigInt);
-//Nhan day bit bat ky, chuyen thanh bool bit[128]
-bool* MakeBit(std::string StrBit);
 //Luu string Bin vao QInt x
 void ScanBin(QInt& x, std::string strBin);
 //Get so he 10

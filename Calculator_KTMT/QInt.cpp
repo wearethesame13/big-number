@@ -629,7 +629,7 @@ QInt operator/(QInt Q, QInt M)
 		Q = num_zero - Q;
 		M = num_zero - M;
 	}
-	if (Q > num_zero && M < num_zero)
+	if (Q > num_zero&& M < num_zero)
 	{
 		M = num_zero - M;
 		sign = 1;
@@ -694,25 +694,6 @@ void ScanInt(QInt& x, string bigInt)
 	delete[] bit;
 }
 
-bool* MakeBit(string StrBit)
-{
-	bool bit[128] = { false };
-	int tempSize = StrBit.size();
-	int j = tempSize - 1;
-	for (int i = 127; i >= 0; i--)
-	{
-		if (j >= 0)
-		{
-			if (StrBit[j] == '0')
-				bit[i] = 0;
-			else
-				bit[i] = 1;
-			j--;
-		}
-		else break;
-	}
-	return bit;
-}
 
 void ScanBin(QInt& x, string strBin)
 {

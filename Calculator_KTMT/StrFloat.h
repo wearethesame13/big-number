@@ -10,13 +10,13 @@ const int AFTER_DOT = 35;
 class StrFloat
 {
 public:
-	string m_float;	
+	string m_float;
 	bool m_negative;
-	StrFloat();		
-	StrFloat(string p);	
+	StrFloat();
+	StrFloat(string p);
 	~StrFloat();
-	bool isNegative(); 
-	void normalize();  
+	bool isNegative();
+	void normalize();
 	StrFloat operator+(const StrFloat& p);
 	StrFloat& operator=(const StrFloat& p);
 	StrFloat& operator/(int p);
@@ -28,8 +28,11 @@ public:
 	friend ostream& operator<<(ostream& os, const StrFloat& p);
 };
 
-void BarFloatQFloat(string src, string& whole, string& dec);
-bool* StringFloatToBitQFloat(string BigFloat);
-string StringDecPartToBitQFloat(string decimal);
+void BarFloat(string src, string& whole, string& dec);
+bool* StringFloatToBit(string BigFloat);
+string StringIntToBit(string x);
+string StringDecPartToBit(string decimal);
 
-string mul2FloatQFloat(string BFloat);
+
+
+string mul2Float(string BFloat);

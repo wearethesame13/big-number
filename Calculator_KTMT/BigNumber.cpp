@@ -231,141 +231,25 @@ string StrBitToInt(bool* bit)
 	return result;
 }
 
-string mul2Float(string BFloat)
+bool* MakeBit(string StrBit)
 {
-	//Chi nhan cho so duong va nho hon 1
-
-	string result = "";
-	int temp = 0, rem = 0;
-	for (int i = BFloat.size() - 1; i >= 0; i--)
+	bool bit[128] = { false };
+	int tempSize = StrBit.size();
+	int j = tempSize - 1;
+	for (int i = 127; i >= 0; i--)
 	{
-		if (BFloat[i] == '.')
-			break;
-
-		temp = (int)(BFloat[i] - '0') * 2 + rem;
-		rem = temp / 10;
-		temp = temp % 10;
-		result = (char)(temp + '0') + result;
-
-	}
-	result = "." + result;
-	if (rem)
-	{
-		result = "1" + result;
-	}
-	else
-	{
-		result = "0" + result;
-	}
-	while (result[result.size() - 1] == '0') result.pop_back();
-	if (result == "1.")
-		result = "1.0";
-	return result;
-
-}
-
-void BarFloat(string src, string& whole, string& dec)
-{
-	whole = "";
-	dec = "";
-	int i = 0;
-	for (i; i < src.size(); i++)
-	{
-		if (src[i] == '.')
-			break;
-		else if (src[i] != '-')
-			whole = whole + src[i];
-	}
-	i++;
-	for (i; i < src.size(); i++)
-		dec = dec + src[i];
-
-	dec = "0." + dec;
-
-	if (whole == "")
-		whole = "0";
-	if (dec == "0.")
-		dec = "0.0";
-}
-
-string StringDecPartToBit(string decimal)
-{
-	//NOTE: ham doi phan nhi phan sang bit
-	string result; int i = 0;
-	while (decimal != "0.0" && i < 15)
-	{
-		decimal = mul2Float(decimal);
-		if (decimal == "1.0")
+		if (j >= 0)
 		{
-			result = result + "1";
-			break;
+			if (StrBit[j] == '0')
+				bit[i] = 0;
+			else
+				bit[i] = 1;
+			j--;
 		}
-		else if (decimal[0] == '1')
-		{
-			result = result + "1";
-			decimal[0] = '0';
-		}
-		else
-			result = result + "0";
-
-		i++;
+		else break;
 	}
-	return result;
-}
-
-bool* StringFloatToBit(string BigFloat)
-{
-	bool* bit = new bool[128];
-	string whole, dec;
-	BarFloat(BigFloat, whole, dec);
-	string wholebit = StringIntToBit(whole);
-	string decbit = StringDecPartToBit(dec);
-	string FractionBit = wholebit + decbit;
-	int E = whole.size() - 1;
-	for (int i = 0; i < FractionBit.size(); i++)
-	{
-		if (FractionBit[i] == '1')
-		{
-			E = E - i;
-			break;
-		}
-	}
-	while (FractionBit[0] == '0') FractionBit.erase(FractionBit.begin());
-	if (FractionBit[0] == '1') FractionBit.erase(FractionBit.begin());
-	while (FractionBit.size() < 112)
-	{
-		FractionBit = FractionBit + "0";
-	}
-
-	string Expo = to_string(E);
-	string bias = "16383";
-	Expo = add(bias, Expo);
-	string ExpoBit = StringIntToBit(Expo);
-	while (ExpoBit.size() < 15)
-	{
-		ExpoBit = "0" + ExpoBit;
-	}
-
-	if (BigFloat[0] == '-')
-		bit[0] = 1;
-	else
-		bit[0] = 0;
-
-	for (int i = 0; i < 15; i++)
-	{
-		if (ExpoBit[i] == '0')
-			bit[1 + i] = 0;
-		else bit[1 + i] = 1;
-	}
-
-	for (int i = 0; i < 112; i++)
-	{
-		if (FractionBit[i] == '0')
-			bit[16 + i] = 0;
-		else bit[16 + i] = 1;
-	}
-
 	return bit;
 }
+
 
 
