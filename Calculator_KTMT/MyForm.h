@@ -1148,9 +1148,7 @@ namespace CalculatorKTMT {
 		{
 			String^ i = textBox1->Text;
 			std::string bigFloat;
-			bool* bin = NULL;
-			char* hex = NULL;
-			Qfloat add;
+			std::string binFloat;
 			Qfloat num_zero;
 			switch (count)
 			{
@@ -1175,18 +1173,7 @@ namespace CalculatorKTMT {
 
 
 				// IN NHI PHAN
-				for (int i = 0; i < 128; i++)
-				{
-					if (bigFloat[i] == '1')
-					{
-						bin[i] = true;
-					}
-					else
-					{
-						bin[i] = false;
-					}
-					textBox4->Text += ((int)bin[i]).ToString();
-				}
+				textBox4->Text = marshal_as<String^>(GetBin(numFloat));
 				break;
 			default:
 				break;
@@ -1195,21 +1182,18 @@ namespace CalculatorKTMT {
 		// TINH TOAN NHI PHAN QFLOAT
 		void computeBinFloat()
 		{
-			char* hex = NULL;
 			String^ t = textBox1->Text;
 			std::string bigFloat = marshal_as<string>(t);
+			ScanBin(numFloat, bigFloat);
 			int temp = (int)(128 - bigFloat.length());
-			bool* bin = new bool[128];
 			for (int i = 0; i < temp; i++)
 			{
 				bigFloat = "0" + bigFloat;
 			}
-			ScanBin(numFloat, bigFloat);
 			switch (count)
 			{
 			case 0:
 				// Xuất số nhị phân
-				textBox1->Text = marshal_as<String^>(bigFloat);
 				textBox4->Text = marshal_as<String^>(bigFloat);
 
 				// Xuất số thập phân
@@ -1408,7 +1392,7 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 		label1->Text = "";
 		for (int i = 0; i < 4; i++)
 		{
-			num.data[i] = 0;
+			numFloat.data[i] = 0;
 		}
 	}
 	
@@ -1769,11 +1753,11 @@ private: System::Void buttonFile_Click(System::Object^ sender, System::EventArgs
 	std::string path = marshal_as<std::string>(tenfile);
 	if (numMode == 0)
 	{
-		isSucceed = WorkWithFileQInt(path);
+		isSucceed = WorkWithFileQInt(path, "QInt_output.txt");
 	}
 	if (numMode == 1)
 	{
-		isSucceed = WorkWithFileQfloat(path);
+		isSucceed = WorkWithFileQfloat(path, "QInt_output.txt");
 	}
 	if (isSucceed == 0)
 	{

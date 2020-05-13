@@ -22,17 +22,7 @@ int main(int argc, char* argv[])
 	if (flag == false)
 	{
 		bool done = false;
-		int tempMode = Convert::ToInt32(argv[3]);
-		if (tempMode == 1)
-		{
-			std::string inputPath = argv[1];
-			done = WorkWithFileQInt(inputPath);
-		}
-		else if (tempMode == 2)
-		{
-			std::string inputPath = argv[2];
-			done = WorkWithFileQfloat(inputPath);
-		}
+		done = WorkWithFile(argv[1], argv[2], argv[3]);
 		if (done == true)
 		{
 			std::cout << "Hoan thanh!!!" << endl;

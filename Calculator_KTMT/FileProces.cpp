@@ -1,6 +1,19 @@
 #include "FileProces.h"
 #include "Qfloat.h"
 
+bool WorkWithFile(string inputPath, string outputPath, string type)
+{
+	bool temp = false;
+	if (type == "1")
+		temp = WorkWithFileQInt(inputPath, outputPath);
+	else if (type == "2")
+	{
+		temp = WorkWithFileQfloat(inputPath, outputPath);
+	}
+	return temp;
+}
+		
+
 bool WorkWithFileQInt(string filename, string fileout)
 {
 	std::fstream fin, fout;

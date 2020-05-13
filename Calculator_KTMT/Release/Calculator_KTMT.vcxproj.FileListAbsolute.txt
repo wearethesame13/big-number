@@ -1,0 +1,2 @@
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\Release\CalculatorKTMT.MyForm.resources
+F:\KTMT&HN\Đồ án 1\KTMTHN\Calculator_KTMT\Release\Calculator_KTMT.vcxproj.GenerateResource.cache
