@@ -113,90 +113,97 @@ string GetFloat(Qfloat x)
 	}
 	else
 	{
-		if (exp == 3)
+		if (exp == 2)
 		{
-			//cout << (x.checkBitScope(0, 0, 1) == true ? "-" : "") << "Infinite" << endl;
-			if (x.checkBitScope(0, 0, 1))
-				return "-Infinite";
-			else
-				return "Infinite";
+			return "Denormalized";
 		}
 		else
 		{
-			if (exp == 4)
+			if (exp == 3)
 			{
-				return "NaN";
+				//cout << (x.checkBitScope(0, 0, 1) == true ? "-" : "") << "Infinite" << endl;
+				if (x.checkBitScope(0, 0, 1))
+					return "-Infinite";
+				else
+					return "Infinite";
 			}
 			else
 			{
-				int sign = x.checkBitScope(0, 1, 1); //0: (+); 1:(-)
-				int base2 = 1; //Biến lưu giá trị tạm để tính 2^(x). // temporary variable constain 2^(x)
-				//double base2after = 1; //temporary variable constain 2^(-x) (*)
-				StrFloat base2after("1"); //Biến lưu giá trị tạm để tính 2^(-x). //temporary variable constain 2^(-x) (*)
-				int Vexp = 0; //Lưu giá trị của mũ // Value of exp
-				int i;
-
-				//Tính giá trị của mũ theo số bít lưu trong QFloat
-				for (i = 15; i > 0; i--) {
-					if (x.getBit(i))
-						Vexp = Vexp + base2;
-					base2 *= 2;
-				}
-				//Chuyển lại theo số Bias bằng cách trừ đi lượng MAX_VALUE_EXP nếu là số dạng không chuẩn thì trừ đi MAX_VALUE_EXP – 1.
-				if (Vexp != 0) Vexp = Vexp - 16383;
-				else Vexp = Vexp - 16382;
-				//Chuyển đối giá trị sau dấu phẩy về dạng thập phân với 35 số sau dấu phẩy.
-				int index = -1;
-				index = index + Vexp;
-				if (index < 0) {
-					for (int i = 0; i > index; i--)
-					{
-						base2after /= 2;
-					}
-				}
-
-				if (index > 0) {
-					for (int i = 0; i < index; i++)
-					{
-						base2after = base2after * 2;
-					}
-				}
-				value = value + base2after * 2;
-				for (i = 16; i < 128; i++) {
-					if (x.getBit(i))
-						value = value + base2after; //Nếu giá trị của bit = 1 thì cộng dồn vào giá trị sau dấu phẩy.
-					base2after /= 2; //Tính 2^(-x) x=i-15
-				}
-
-				if (exp == 1) value++;
-				//In giá trị
-				//if (sign) cout << '-'; //Kiểm tra số âm.
-				//cout << value << "x2^" << Vexp << endl; //Xuất ra dạng x.xxxx*2^x
-				//if (sign == 1) cout << '-';
-				// làm tròn
-				bool iszero = true;
-				for (int i = 0; i < value.m_float.length(); i++)
+				if (exp == 4)
 				{
-					if (value.m_float[i] == '.' && value.m_float[i] == '0')
-					{
-						for (int j = i + 1; j < value.m_float.length(); j++)
-						{
-							if (value.m_float[j] != '0')
-							{
-								iszero = false;
-								break;
-							}
-						}
-						if (iszero == true) {
-							value.m_float[i + 35] = '1';
-						}
-						break;
-					}
+					return "NaN";
 				}
-				if (sign == 1)
-					return "-" + value.m_float;
 				else
-					return value.m_float;
+				{
+					int sign = x.checkBitScope(0, 1, 1); //0: (+); 1:(-)
+					int base2 = 1; //Biến lưu giá trị tạm để tính 2^(x). // temporary variable constain 2^(x)
+					//double base2after = 1; //temporary variable constain 2^(-x) (*)
+					StrFloat base2after("1"); //Biến lưu giá trị tạm để tính 2^(-x). //temporary variable constain 2^(-x) (*)
+					int Vexp = 0; //Lưu giá trị của mũ // Value of exp
+					int i;
+
+					//Tính giá trị của mũ theo số bít lưu trong QFloat
+					for (i = 15; i > 0; i--) {
+						if (x.getBit(i))
+							Vexp = Vexp + base2;
+						base2 *= 2;
+					}
+					//Chuyển lại theo số Bias bằng cách trừ đi lượng MAX_VALUE_EXP nếu là số dạng không chuẩn thì trừ đi MAX_VALUE_EXP – 1.
+					if (Vexp != 0) Vexp = Vexp - 16383;
+					else Vexp = Vexp - 16382;
+					//Chuyển đối giá trị sau dấu phẩy về dạng thập phân với 35 số sau dấu phẩy.
+					int index = -1;
+					index = index + Vexp;
+					if (index < 0) {
+						for (int i = 0; i > index; i--)
+						{
+							base2after /= 2;
+						}
+					}
+
+					if (index > 0) {
+						for (int i = 0; i < index; i++)
+						{
+							base2after = base2after * 2;
+						}
+					}
+					value = value + base2after * 2;
+					for (i = 16; i < 128; i++) {
+						if (x.getBit(i))
+							value = value + base2after; //Nếu giá trị của bit = 1 thì cộng dồn vào giá trị sau dấu phẩy.
+						base2after /= 2; //Tính 2^(-x) x=i-15
+					}
+
+					if (exp == 1) value++;
+					//In giá trị
+					//if (sign) cout << '-'; //Kiểm tra số âm.
+					//cout << value << "x2^" << Vexp << endl; //Xuất ra dạng x.xxxx*2^x
+					//if (sign == 1) cout << '-';
+					// làm tròn
+					bool iszero = true;
+					for (int i = 0; i < value.m_float.length(); i++)
+					{
+						if (value.m_float[i] == '.' && value.m_float[i] == '0')
+						{
+							for (int j = i + 1; j < value.m_float.length(); j++)
+							{
+								if (value.m_float[j] != '0')
+								{
+									iszero = false;
+									break;
+								}
+							}
+							if (iszero == true) {
+								value.m_float[i + 35] = '1';
+							}
+							break;
+						}
+					}
+					if (sign == 1)
+						return "-" + value.m_float;
+					else
+						return value.m_float;
+				}
 			}
 		}
 	}

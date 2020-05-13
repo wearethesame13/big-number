@@ -354,20 +354,15 @@ QInt QInt::rol(int n)
 QInt QInt::ror(int n)
 {
 	bool* x = DecToBin(*this);
-	bool* a = new bool[n];
-	for (int index = 128 - n; index < 128; index++)
+	for (int i = 0; i < n; i++)
 	{
-		a[index] = x[index];
-	}
-	for (int index = 127; index >= n; index--)
-	{
-		x[index] = x[index - n];
-	}
-	int indexOfn = n - 1;
-	for (int index = 0; index < n; index++)
-	{
-		x[index] = a[indexOfn];
-		indexOfn--;
+		bool temp = x[0];
+		x[0] = x[127];
+		for (int j = 127; j > 1; j--)
+		{
+			x[j] = x[j - 1];
+		}
+		x[1] = temp;
 	}
 	return BinToDec(x);
 }
