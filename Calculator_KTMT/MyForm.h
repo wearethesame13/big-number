@@ -1771,7 +1771,7 @@ private: System::Void buttonFile_Click(System::Object^ sender, System::EventArgs
 	}
 	if (numMode == 1)
 	{
-		isSucceed = WorkWithFileQfloat(path, "QInt_output.txt");
+		isSucceed = WorkWithFileQfloat(path, "QFloat_output.txt");
 	}
 	if (isSucceed == 0)
 	{
